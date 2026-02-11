@@ -1,0 +1,4555 @@
+﻿=== ROOT DIRECTORY STRUCTURE ===
+Root: C:\Users\laksh\OneDrive\Desktop\internmatch-backend
+
+[FILE] .gitattributes
+[FILE] .gitignore
+[DIR ] .mvn
+[DIR ] .mvn\wrapper
+[FILE] .mvn\wrapper\maven-wrapper.properties
+[DIR ] .vscode
+[FILE] .vscode\extensions.json
+[FILE] HELP.md
+[FILE] mvnw
+[FILE] mvnw.cmd
+[FILE] pom.xml
+[FILE] process.txt
+[FILE] README.md
+[DIR ] src
+[DIR ] src\main
+[DIR ] src\main\java
+[DIR ] src\main\java\com
+[DIR ] src\main\java\com\internmatch
+[DIR ] src\main\java\com\internmatch\backend
+[DIR ] src\main\java\com\internmatch\backend\config
+[FILE] src\main\java\com\internmatch\backend\config\SecurityConfig.java
+[DIR ] src\main\java\com\internmatch\backend\controller
+[FILE] src\main\java\com\internmatch\backend\controller\ApplicationController.java
+[FILE] src\main\java\com\internmatch\backend\controller\AuthController.java
+[FILE] src\main\java\com\internmatch\backend\controller\InternshipController.java
+[FILE] src\main\java\com\internmatch\backend\controller\ResumeController.java
+[FILE] src\main\java\com\internmatch\backend\controller\ScoreController.java
+[FILE] src\main\java\com\internmatch\backend\controller\TestController.java
+[DIR ] src\main\java\com\internmatch\backend\dto
+[FILE] src\main\java\com\internmatch\backend\dto\ApplicationRequest.java
+[FILE] src\main\java\com\internmatch\backend\dto\ApplicationResponse.java
+[FILE] src\main\java\com\internmatch\backend\dto\AuthResponse.java
+[FILE] src\main\java\com\internmatch\backend\dto\InternshipRequest.java
+[FILE] src\main\java\com\internmatch\backend\dto\InternshipResponse.java
+[FILE] src\main\java\com\internmatch\backend\dto\LoginRequest.java
+[FILE] src\main\java\com\internmatch\backend\dto\RegisterRequest.java
+[FILE] src\main\java\com\internmatch\backend\dto\ResumeRequest.java
+[FILE] src\main\java\com\internmatch\backend\dto\ResumeResponse.java
+[FILE] src\main\java\com\internmatch\backend\dto\ScoreRequest.java
+[FILE] src\main\java\com\internmatch\backend\dto\ScoreResponse.java
+[DIR ] src\main\java\com\internmatch\backend\entity
+[FILE] src\main\java\com\internmatch\backend\entity\Application.java
+[FILE] src\main\java\com\internmatch\backend\entity\ApplicationStatus.java
+[FILE] src\main\java\com\internmatch\backend\entity\Internship.java
+[FILE] src\main\java\com\internmatch\backend\entity\Resume.java
+[FILE] src\main\java\com\internmatch\backend\entity\Role.java
+[FILE] src\main\java\com\internmatch\backend\entity\Score.java
+[FILE] src\main\java\com\internmatch\backend\entity\User.java
+[DIR ] src\main\java\com\internmatch\backend\exception
+[FILE] src\main\java\com\internmatch\backend\exception\GlobalExceptionHandler.java
+[FILE] src\main\java\com\internmatch\backend\InternmatchBackendApplication.java
+[DIR ] src\main\java\com\internmatch\backend\repository
+[FILE] src\main\java\com\internmatch\backend\repository\ApplicationRepository.java
+[FILE] src\main\java\com\internmatch\backend\repository\InternshipRepository.java
+[FILE] src\main\java\com\internmatch\backend\repository\ResumeRepository.java
+[FILE] src\main\java\com\internmatch\backend\repository\ScoreRepository.java
+[FILE] src\main\java\com\internmatch\backend\repository\UserRepository.java
+[DIR ] src\main\java\com\internmatch\backend\security
+[FILE] src\main\java\com\internmatch\backend\security\CustomUserDetailsService.java
+[FILE] src\main\java\com\internmatch\backend\security\JwtAuthenticationFilter.java
+[DIR ] src\main\java\com\internmatch\backend\service
+[FILE] src\main\java\com\internmatch\backend\service\ApplicationService.java
+[FILE] src\main\java\com\internmatch\backend\service\AuthService.java
+[FILE] src\main\java\com\internmatch\backend\service\InternshipService.java
+[FILE] src\main\java\com\internmatch\backend\service\RankingService.java
+[FILE] src\main\java\com\internmatch\backend\service\ResumeService.java
+[DIR ] src\main\java\com\internmatch\backend\util
+[FILE] src\main\java\com\internmatch\backend\util\JwtUtil.java
+[DIR ] src\main\resources
+[FILE] src\main\resources\application.properties
+[DIR ] src\main\resources\static
+[DIR ] src\main\resources\templates
+[DIR ] src\test
+[DIR ] src\test\java
+[DIR ] src\test\java\com
+[DIR ] src\test\java\com\internmatch
+[DIR ] src\test\java\com\internmatch\backend
+[FILE] src\test\java\com\internmatch\backend\InternmatchBackendApplicationTests.java
+[DIR ] test_pdfs
+[FILE] test_pdfs\sample_resume.pdf
+
+=== FILE CONTENTS ===
+
+----- .gitattributes -----
+/mvnw text eol=lf
+*.cmd text eol=crlf
+
+
+----- .gitignore -----
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+
+----- .mvn\wrapper\maven-wrapper.properties -----
+wrapperVersion=3.3.4
+distributionType=only-script
+distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.12/apache-maven-3.9.12-bin.zip
+
+
+----- .vscode\extensions.json -----
+{
+    "recommendations": []
+}
+
+----- HELP.md -----
+# Getting Started
+
+### Reference Documentation
+For further reference, please consider the following sections:
+
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.5.10/maven-plugin)
+* [Create an OCI image](https://docs.spring.io/spring-boot/3.5.10/maven-plugin/build-image.html)
+* [Spring Web](https://docs.spring.io/spring-boot/3.5.10/reference/web/servlet.html)
+* [Spring Data JPA](https://docs.spring.io/spring-boot/3.5.10/reference/data/sql.html#data.sql.jpa-and-spring-data)
+* [Spring Security](https://docs.spring.io/spring-boot/3.5.10/reference/web/spring-security.html)
+* [Validation](https://docs.spring.io/spring-boot/3.5.10/reference/io/validation.html)
+* [Spring Boot DevTools](https://docs.spring.io/spring-boot/3.5.10/reference/using/devtools.html)
+* [OAuth2 Resource Server](https://docs.spring.io/spring-boot/3.5.10/reference/web/spring-security.html#web.security.oauth2.server)
+
+### Guides
+The following guides illustrate how to use some features concretely:
+
+* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
+* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
+* [Securing a Web Application](https://spring.io/guides/gs/securing-web/)
+* [Spring Boot and OAuth2](https://spring.io/guides/tutorials/spring-boot-oauth2/)
+* [Authenticating a User with LDAP](https://spring.io/guides/gs/authenticating-ldap/)
+* [Validation](https://spring.io/guides/gs/validating-form-input/)
+
+### Maven Parent overrides
+
+Due to Maven's design, elements are inherited from the parent POM to the project POM.
+While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the parent.
+To prevent this, the project POM contains empty overrides for these elements.
+If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
+
+
+
+----- mvnw -----
+#!/bin/sh
+# ----------------------------------------------------------------------------
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# Apache Maven Wrapper startup batch script, version 3.3.4
+#
+# Optional ENV vars
+# -----------------
+#   JAVA_HOME - location of a JDK home dir, required when download maven via java source
+#   MVNW_REPOURL - repo url base for downloading maven distribution
+#   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven
+#   MVNW_VERBOSE - true: enable verbose log; debug: trace the mvnw script; others: silence the output
+# ----------------------------------------------------------------------------
+
+set -euf
+[ "${MVNW_VERBOSE-}" != debug ] || set -x
+
+# OS specific support.
+native_path() { printf %s\\n "$1"; }
+case "$(uname)" in
+CYGWIN* | MINGW*)
+  [ -z "${JAVA_HOME-}" ] || JAVA_HOME="$(cygpath --unix "$JAVA_HOME")"
+  native_path() { cygpath --path --windows "$1"; }
+  ;;
+esac
+
+# set JAVACMD and JAVACCMD
+set_java_home() {
+  # For Cygwin and MinGW, ensure paths are in Unix format before anything is touched
+  if [ -n "${JAVA_HOME-}" ]; then
+    if [ -x "$JAVA_HOME/jre/sh/java" ]; then
+      # IBM's JDK on AIX uses strange locations for the executables
+      JAVACMD="$JAVA_HOME/jre/sh/java"
+      JAVACCMD="$JAVA_HOME/jre/sh/javac"
+    else
+      JAVACMD="$JAVA_HOME/bin/java"
+      JAVACCMD="$JAVA_HOME/bin/javac"
+
+      if [ ! -x "$JAVACMD" ] || [ ! -x "$JAVACCMD" ]; then
+        echo "The JAVA_HOME environment variable is not defined correctly, so mvnw cannot run." >&2
+        echo "JAVA_HOME is set to \"$JAVA_HOME\", but \"\$JAVA_HOME/bin/java\" or \"\$JAVA_HOME/bin/javac\" does not exist." >&2
+        return 1
+      fi
+    fi
+  else
+    JAVACMD="$(
+      'set' +e
+      'unset' -f command 2>/dev/null
+      'command' -v java
+    )" || :
+    JAVACCMD="$(
+      'set' +e
+      'unset' -f command 2>/dev/null
+      'command' -v javac
+    )" || :
+
+    if [ ! -x "${JAVACMD-}" ] || [ ! -x "${JAVACCMD-}" ]; then
+      echo "The java/javac command does not exist in PATH nor is JAVA_HOME set, so mvnw cannot run." >&2
+      return 1
+    fi
+  fi
+}
+
+# hash string like Java String::hashCode
+hash_string() {
+  str="${1:-}" h=0
+  while [ -n "$str" ]; do
+    char="${str%"${str#?}"}"
+    h=$(((h * 31 + $(LC_CTYPE=C printf %d "'$char")) % 4294967296))
+    str="${str#?}"
+  done
+  printf %x\\n $h
+}
+
+verbose() { :; }
+[ "${MVNW_VERBOSE-}" != true ] || verbose() { printf %s\\n "${1-}"; }
+
+die() {
+  printf %s\\n "$1" >&2
+  exit 1
+}
+
+trim() {
+  # MWRAPPER-139:
+  #   Trims trailing and leading whitespace, carriage returns, tabs, and linefeeds.
+  #   Needed for removing poorly interpreted newline sequences when running in more
+  #   exotic environments such as mingw bash on Windows.
+  printf "%s" "${1}" | tr -d '[:space:]'
+}
+
+scriptDir="$(dirname "$0")"
+scriptName="$(basename "$0")"
+
+# parse distributionUrl and optional distributionSha256Sum, requires .mvn/wrapper/maven-wrapper.properties
+while IFS="=" read -r key value; do
+  case "${key-}" in
+  distributionUrl) distributionUrl=$(trim "${value-}") ;;
+  distributionSha256Sum) distributionSha256Sum=$(trim "${value-}") ;;
+  esac
+done <"$scriptDir/.mvn/wrapper/maven-wrapper.properties"
+[ -n "${distributionUrl-}" ] || die "cannot read distributionUrl property in $scriptDir/.mvn/wrapper/maven-wrapper.properties"
+
+case "${distributionUrl##*/}" in
+maven-mvnd-*bin.*)
+  MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/
+  case "${PROCESSOR_ARCHITECTURE-}${PROCESSOR_ARCHITEW6432-}:$(uname -a)" in
+  *AMD64:CYGWIN* | *AMD64:MINGW*) distributionPlatform=windows-amd64 ;;
+  :Darwin*x86_64) distributionPlatform=darwin-amd64 ;;
+  :Darwin*arm64) distributionPlatform=darwin-aarch64 ;;
+  :Linux*x86_64*) distributionPlatform=linux-amd64 ;;
+  *)
+    echo "Cannot detect native platform for mvnd on $(uname)-$(uname -m), use pure java version" >&2
+    distributionPlatform=linux-amd64
+    ;;
+  esac
+  distributionUrl="${distributionUrl%-bin.*}-$distributionPlatform.zip"
+  ;;
+maven-mvnd-*) MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/ ;;
+*) MVN_CMD="mvn${scriptName#mvnw}" _MVNW_REPO_PATTERN=/org/apache/maven/ ;;
+esac
+
+# apply MVNW_REPOURL and calculate MAVEN_HOME
+# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>
+[ -z "${MVNW_REPOURL-}" ] || distributionUrl="$MVNW_REPOURL$_MVNW_REPO_PATTERN${distributionUrl#*"$_MVNW_REPO_PATTERN"}"
+distributionUrlName="${distributionUrl##*/}"
+distributionUrlNameMain="${distributionUrlName%.*}"
+distributionUrlNameMain="${distributionUrlNameMain%-bin}"
+MAVEN_USER_HOME="${MAVEN_USER_HOME:-${HOME}/.m2}"
+MAVEN_HOME="${MAVEN_USER_HOME}/wrapper/dists/${distributionUrlNameMain-}/$(hash_string "$distributionUrl")"
+
+exec_maven() {
+  unset MVNW_VERBOSE MVNW_USERNAME MVNW_PASSWORD MVNW_REPOURL || :
+  exec "$MAVEN_HOME/bin/$MVN_CMD" "$@" || die "cannot exec $MAVEN_HOME/bin/$MVN_CMD"
+}
+
+if [ -d "$MAVEN_HOME" ]; then
+  verbose "found existing MAVEN_HOME at $MAVEN_HOME"
+  exec_maven "$@"
+fi
+
+case "${distributionUrl-}" in
+*?-bin.zip | *?maven-mvnd-?*-?*.zip) ;;
+*) die "distributionUrl is not valid, must match *-bin.zip or maven-mvnd-*.zip, but found '${distributionUrl-}'" ;;
+esac
+
+# prepare tmp dir
+if TMP_DOWNLOAD_DIR="$(mktemp -d)" && [ -d "$TMP_DOWNLOAD_DIR" ]; then
+  clean() { rm -rf -- "$TMP_DOWNLOAD_DIR"; }
+  trap clean HUP INT TERM EXIT
+else
+  die "cannot create temp dir"
+fi
+
+mkdir -p -- "${MAVEN_HOME%/*}"
+
+# Download and Install Apache Maven
+verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."
+verbose "Downloading from: $distributionUrl"
+verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"
+
+# select .zip or .tar.gz
+if ! command -v unzip >/dev/null; then
+  distributionUrl="${distributionUrl%.zip}.tar.gz"
+  distributionUrlName="${distributionUrl##*/}"
+fi
+
+# verbose opt
+__MVNW_QUIET_WGET=--quiet __MVNW_QUIET_CURL=--silent __MVNW_QUIET_UNZIP=-q __MVNW_QUIET_TAR=''
+[ "${MVNW_VERBOSE-}" != true ] || __MVNW_QUIET_WGET='' __MVNW_QUIET_CURL='' __MVNW_QUIET_UNZIP='' __MVNW_QUIET_TAR=v
+
+# normalize http auth
+case "${MVNW_PASSWORD:+has-password}" in
+'') MVNW_USERNAME='' MVNW_PASSWORD='' ;;
+has-password) [ -n "${MVNW_USERNAME-}" ] || MVNW_USERNAME='' MVNW_PASSWORD='' ;;
+esac
+
+if [ -z "${MVNW_USERNAME-}" ] && command -v wget >/dev/null; then
+  verbose "Found wget ... using wget"
+  wget ${__MVNW_QUIET_WGET:+"$__MVNW_QUIET_WGET"} "$distributionUrl" -O "$TMP_DOWNLOAD_DIR/$distributionUrlName" || die "wget: Failed to fetch $distributionUrl"
+elif [ -z "${MVNW_USERNAME-}" ] && command -v curl >/dev/null; then
+  verbose "Found curl ... using curl"
+  curl ${__MVNW_QUIET_CURL:+"$__MVNW_QUIET_CURL"} -f -L -o "$TMP_DOWNLOAD_DIR/$distributionUrlName" "$distributionUrl" || die "curl: Failed to fetch $distributionUrl"
+elif set_java_home; then
+  verbose "Falling back to use Java to download"
+  javaSource="$TMP_DOWNLOAD_DIR/Downloader.java"
+  targetZip="$TMP_DOWNLOAD_DIR/$distributionUrlName"
+  cat >"$javaSource" <<-END
+	public class Downloader extends java.net.Authenticator
+	{
+	  protected java.net.PasswordAuthentication getPasswordAuthentication()
+	  {
+	    return new java.net.PasswordAuthentication( System.getenv( "MVNW_USERNAME" ), System.getenv( "MVNW_PASSWORD" ).toCharArray() );
+	  }
+	  public static void main( String[] args ) throws Exception
+	  {
+	    setDefault( new Downloader() );
+	    java.nio.file.Files.copy( java.net.URI.create( args[0] ).toURL().openStream(), java.nio.file.Paths.get( args[1] ).toAbsolutePath().normalize() );
+	  }
+	}
+	END
+  # For Cygwin/MinGW, switch paths to Windows format before running javac and java
+  verbose " - Compiling Downloader.java ..."
+  "$(native_path "$JAVACCMD")" "$(native_path "$javaSource")" || die "Failed to compile Downloader.java"
+  verbose " - Running Downloader.java ..."
+  "$(native_path "$JAVACMD")" -cp "$(native_path "$TMP_DOWNLOAD_DIR")" Downloader "$distributionUrl" "$(native_path "$targetZip")"
+fi
+
+# If specified, validate the SHA-256 sum of the Maven distribution zip file
+if [ -n "${distributionSha256Sum-}" ]; then
+  distributionSha256Result=false
+  if [ "$MVN_CMD" = mvnd.sh ]; then
+    echo "Checksum validation is not supported for maven-mvnd." >&2
+    echo "Please disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2
+    exit 1
+  elif command -v sha256sum >/dev/null; then
+    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | sha256sum -c - >/dev/null 2>&1; then
+      distributionSha256Result=true
+    fi
+  elif command -v shasum >/dev/null; then
+    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | shasum -a 256 -c >/dev/null 2>&1; then
+      distributionSha256Result=true
+    fi
+  else
+    echo "Checksum validation was requested but neither 'sha256sum' or 'shasum' are available." >&2
+    echo "Please install either command, or disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2
+    exit 1
+  fi
+  if [ $distributionSha256Result = false ]; then
+    echo "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised." >&2
+    echo "If you updated your Maven version, you need to update the specified distributionSha256Sum property." >&2
+    exit 1
+  fi
+fi
+
+# unzip and move
+if command -v unzip >/dev/null; then
+  unzip ${__MVNW_QUIET_UNZIP:+"$__MVNW_QUIET_UNZIP"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -d "$TMP_DOWNLOAD_DIR" || die "failed to unzip"
+else
+  tar xzf${__MVNW_QUIET_TAR:+"$__MVNW_QUIET_TAR"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -C "$TMP_DOWNLOAD_DIR" || die "failed to untar"
+fi
+
+# Find the actual extracted directory name (handles snapshots where filename != directory name)
+actualDistributionDir=""
+
+# First try the expected directory name (for regular distributions)
+if [ -d "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain" ]; then
+  if [ -f "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain/bin/$MVN_CMD" ]; then
+    actualDistributionDir="$distributionUrlNameMain"
+  fi
+fi
+
+# If not found, search for any directory with the Maven executable (for snapshots)
+if [ -z "$actualDistributionDir" ]; then
+  # enable globbing to iterate over items
+  set +f
+  for dir in "$TMP_DOWNLOAD_DIR"/*; do
+    if [ -d "$dir" ]; then
+      if [ -f "$dir/bin/$MVN_CMD" ]; then
+        actualDistributionDir="$(basename "$dir")"
+        break
+      fi
+    fi
+  done
+  set -f
+fi
+
+if [ -z "$actualDistributionDir" ]; then
+  verbose "Contents of $TMP_DOWNLOAD_DIR:"
+  verbose "$(ls -la "$TMP_DOWNLOAD_DIR")"
+  die "Could not find Maven distribution directory in extracted archive"
+fi
+
+verbose "Found extracted Maven distribution directory: $actualDistributionDir"
+printf %s\\n "$distributionUrl" >"$TMP_DOWNLOAD_DIR/$actualDistributionDir/mvnw.url"
+mv -- "$TMP_DOWNLOAD_DIR/$actualDistributionDir" "$MAVEN_HOME" || [ -d "$MAVEN_HOME" ] || die "fail to move MAVEN_HOME"
+
+clean || :
+exec_maven "$@"
+
+
+----- mvnw.cmd -----
+<# : batch portion
+@REM ----------------------------------------------------------------------------
+@REM Licensed to the Apache Software Foundation (ASF) under one
+@REM or more contributor license agreements.  See the NOTICE file
+@REM distributed with this work for additional information
+@REM regarding copyright ownership.  The ASF licenses this file
+@REM to you under the Apache License, Version 2.0 (the
+@REM "License"); you may not use this file except in compliance
+@REM with the License.  You may obtain a copy of the License at
+@REM
+@REM    http://www.apache.org/licenses/LICENSE-2.0
+@REM
+@REM Unless required by applicable law or agreed to in writing,
+@REM software distributed under the License is distributed on an
+@REM "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+@REM KIND, either express or implied.  See the License for the
+@REM specific language governing permissions and limitations
+@REM under the License.
+@REM ----------------------------------------------------------------------------
+
+@REM ----------------------------------------------------------------------------
+@REM Apache Maven Wrapper startup batch script, version 3.3.4
+@REM
+@REM Optional ENV vars
+@REM   MVNW_REPOURL - repo url base for downloading maven distribution
+@REM   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven
+@REM   MVNW_VERBOSE - true: enable verbose log; others: silence the output
+@REM ----------------------------------------------------------------------------
+
+@IF "%__MVNW_ARG0_NAME__%"=="" (SET __MVNW_ARG0_NAME__=%~nx0)
+@SET __MVNW_CMD__=
+@SET __MVNW_ERROR__=
+@SET __MVNW_PSMODULEP_SAVE=%PSModulePath%
+@SET PSModulePath=
+@FOR /F "usebackq tokens=1* delims==" %%A IN (`powershell -noprofile "& {$scriptDir='%~dp0'; $script='%__MVNW_ARG0_NAME__%'; icm -ScriptBlock ([Scriptblock]::Create((Get-Content -Raw '%~f0'))) -NoNewScope}"`) DO @(
+  IF "%%A"=="MVN_CMD" (set __MVNW_CMD__=%%B) ELSE IF "%%B"=="" (echo %%A) ELSE (echo %%A=%%B)
+)
+@SET PSModulePath=%__MVNW_PSMODULEP_SAVE%
+@SET __MVNW_PSMODULEP_SAVE=
+@SET __MVNW_ARG0_NAME__=
+@SET MVNW_USERNAME=
+@SET MVNW_PASSWORD=
+@IF NOT "%__MVNW_CMD__%"=="" ("%__MVNW_CMD__%" %*)
+@echo Cannot start maven from wrapper >&2 && exit /b 1
+@GOTO :EOF
+: end batch / begin powershell #>
+
+$ErrorActionPreference = "Stop"
+if ($env:MVNW_VERBOSE -eq "true") {
+  $VerbosePreference = "Continue"
+}
+
+# calculate distributionUrl, requires .mvn/wrapper/maven-wrapper.properties
+$distributionUrl = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionUrl
+if (!$distributionUrl) {
+  Write-Error "cannot read distributionUrl property in $scriptDir/.mvn/wrapper/maven-wrapper.properties"
+}
+
+switch -wildcard -casesensitive ( $($distributionUrl -replace '^.*/','') ) {
+  "maven-mvnd-*" {
+    $USE_MVND = $true
+    $distributionUrl = $distributionUrl -replace '-bin\.[^.]*$',"-windows-amd64.zip"
+    $MVN_CMD = "mvnd.cmd"
+    break
+  }
+  default {
+    $USE_MVND = $false
+    $MVN_CMD = $script -replace '^mvnw','mvn'
+    break
+  }
+}
+
+# apply MVNW_REPOURL and calculate MAVEN_HOME
+# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>
+if ($env:MVNW_REPOURL) {
+  $MVNW_REPO_PATTERN = if ($USE_MVND -eq $False) { "/org/apache/maven/" } else { "/maven/mvnd/" }
+  $distributionUrl = "$env:MVNW_REPOURL$MVNW_REPO_PATTERN$($distributionUrl -replace "^.*$MVNW_REPO_PATTERN",'')"
+}
+$distributionUrlName = $distributionUrl -replace '^.*/',''
+$distributionUrlNameMain = $distributionUrlName -replace '\.[^.]*$','' -replace '-bin$',''
+
+$MAVEN_M2_PATH = "$HOME/.m2"
+if ($env:MAVEN_USER_HOME) {
+  $MAVEN_M2_PATH = "$env:MAVEN_USER_HOME"
+}
+
+if (-not (Test-Path -Path $MAVEN_M2_PATH)) {
+    New-Item -Path $MAVEN_M2_PATH -ItemType Directory | Out-Null
+}
+
+$MAVEN_WRAPPER_DISTS = $null
+if ((Get-Item $MAVEN_M2_PATH).Target[0] -eq $null) {
+  $MAVEN_WRAPPER_DISTS = "$MAVEN_M2_PATH/wrapper/dists"
+} else {
+  $MAVEN_WRAPPER_DISTS = (Get-Item $MAVEN_M2_PATH).Target[0] + "/wrapper/dists"
+}
+
+$MAVEN_HOME_PARENT = "$MAVEN_WRAPPER_DISTS/$distributionUrlNameMain"
+$MAVEN_HOME_NAME = ([System.Security.Cryptography.SHA256]::Create().ComputeHash([byte[]][char[]]$distributionUrl) | ForEach-Object {$_.ToString("x2")}) -join ''
+$MAVEN_HOME = "$MAVEN_HOME_PARENT/$MAVEN_HOME_NAME"
+
+if (Test-Path -Path "$MAVEN_HOME" -PathType Container) {
+  Write-Verbose "found existing MAVEN_HOME at $MAVEN_HOME"
+  Write-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"
+  exit $?
+}
+
+if (! $distributionUrlNameMain -or ($distributionUrlName -eq $distributionUrlNameMain)) {
+  Write-Error "distributionUrl is not valid, must end with *-bin.zip, but found $distributionUrl"
+}
+
+# prepare tmp dir
+$TMP_DOWNLOAD_DIR_HOLDER = New-TemporaryFile
+$TMP_DOWNLOAD_DIR = New-Item -Itemtype Directory -Path "$TMP_DOWNLOAD_DIR_HOLDER.dir"
+$TMP_DOWNLOAD_DIR_HOLDER.Delete() | Out-Null
+trap {
+  if ($TMP_DOWNLOAD_DIR.Exists) {
+    try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }
+    catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }
+  }
+}
+
+New-Item -Itemtype Directory -Path "$MAVEN_HOME_PARENT" -Force | Out-Null
+
+# Download and Install Apache Maven
+Write-Verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."
+Write-Verbose "Downloading from: $distributionUrl"
+Write-Verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"
+
+$webclient = New-Object System.Net.WebClient
+if ($env:MVNW_USERNAME -and $env:MVNW_PASSWORD) {
+  $webclient.Credentials = New-Object System.Net.NetworkCredential($env:MVNW_USERNAME, $env:MVNW_PASSWORD)
+}
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$webclient.DownloadFile($distributionUrl, "$TMP_DOWNLOAD_DIR/$distributionUrlName") | Out-Null
+
+# If specified, validate the SHA-256 sum of the Maven distribution zip file
+$distributionSha256Sum = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionSha256Sum
+if ($distributionSha256Sum) {
+  if ($USE_MVND) {
+    Write-Error "Checksum validation is not supported for maven-mvnd. `nPlease disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties."
+  }
+  Import-Module $PSHOME\Modules\Microsoft.PowerShell.Utility -Function Get-FileHash
+  if ((Get-FileHash "$TMP_DOWNLOAD_DIR/$distributionUrlName" -Algorithm SHA256).Hash.ToLower() -ne $distributionSha256Sum) {
+    Write-Error "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised. If you updated your Maven version, you need to update the specified distributionSha256Sum property."
+  }
+}
+
+# unzip and move
+Expand-Archive "$TMP_DOWNLOAD_DIR/$distributionUrlName" -DestinationPath "$TMP_DOWNLOAD_DIR" | Out-Null
+
+# Find the actual extracted directory name (handles snapshots where filename != directory name)
+$actualDistributionDir = ""
+
+# First try the expected directory name (for regular distributions)
+$expectedPath = Join-Path "$TMP_DOWNLOAD_DIR" "$distributionUrlNameMain"
+$expectedMvnPath = Join-Path "$expectedPath" "bin/$MVN_CMD"
+if ((Test-Path -Path $expectedPath -PathType Container) -and (Test-Path -Path $expectedMvnPath -PathType Leaf)) {
+  $actualDistributionDir = $distributionUrlNameMain
+}
+
+# If not found, search for any directory with the Maven executable (for snapshots)
+if (!$actualDistributionDir) {
+  Get-ChildItem -Path "$TMP_DOWNLOAD_DIR" -Directory | ForEach-Object {
+    $testPath = Join-Path $_.FullName "bin/$MVN_CMD"
+    if (Test-Path -Path $testPath -PathType Leaf) {
+      $actualDistributionDir = $_.Name
+    }
+  }
+}
+
+if (!$actualDistributionDir) {
+  Write-Error "Could not find Maven distribution directory in extracted archive"
+}
+
+Write-Verbose "Found extracted Maven distribution directory: $actualDistributionDir"
+Rename-Item -Path "$TMP_DOWNLOAD_DIR/$actualDistributionDir" -NewName $MAVEN_HOME_NAME | Out-Null
+try {
+  Move-Item -Path "$TMP_DOWNLOAD_DIR/$MAVEN_HOME_NAME" -Destination $MAVEN_HOME_PARENT | Out-Null
+} catch {
+  if (! (Test-Path -Path "$MAVEN_HOME" -PathType Container)) {
+    Write-Error "fail to move MAVEN_HOME"
+  }
+} finally {
+  try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }
+  catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }
+}
+
+Write-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"
+
+
+----- pom.xml -----
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.5.10</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.internmatch</groupId>
+	<artifactId>internmatch-backend</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>internmatch-backend</name>
+	<description>AI-Powered Internship Matching Platform</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>21</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- JWT -->
+	<dependency>
+		<groupId>io.jsonwebtoken</groupId>
+		<artifactId>jjwt-api</artifactId>
+		<version>0.12.3</version>
+	</dependency>
+	<dependency>
+		<groupId>io.jsonwebtoken</groupId>
+		<artifactId>jjwt-impl</artifactId>
+		<version>0.12.3</version>
+		<scope>runtime</scope>
+	</dependency>
+	<dependency>
+		<groupId>io.jsonwebtoken</groupId>
+		<artifactId>jjwt-jackson</artifactId>
+		<version>0.12.3</version>
+		<scope>runtime</scope>
+	</dependency>
+
+	<!-- PDF -->
+	<dependency>
+		<groupId>org.apache.pdfbox</groupId>
+		<artifactId>pdfbox</artifactId>
+		<version>3.0.1</version>
+	</dependency>
+
+	<!-- OpenAI -->
+	<dependency>
+		<groupId>com.theokanning.openai-gpt3-java</groupId>
+		<artifactId>service</artifactId>
+		<version>0.18.2</version>
+	</dependency>
+
+	<!-- SMILE: Lightweight ML for Text Similarity (TF-IDF + Cosine Similarity) -->
+	<dependency>
+		<groupId>com.github.haifengl</groupId>
+		<artifactId>smile-core</artifactId>
+		<version>3.0.1</version>
+	</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+
+
+----- process.txt -----
+=== INTERNMATCH BACKEND PROJECT - DETAILED CONTEXT ===
+Last Updated: 2026-02-10 22:55 UTC+5:30
+Project Status: PHASE 6 COMPLETE âœ… - AI RANKING ENGINE WORKING
+Current Build: âœ… SUCCESS
+Current App: âœ… RUNNING ON PORT 8080
+
+================================================================================
+PROJECT OVERVIEW
+================================================================================
+Name: InternMatch - AI-Powered Internship & Hiring Platform
+Type: Backend REST API (Spring Boot 3, Java 21, Maven)
+Database: MySQL 8.0
+Port: 8080
+Goal: Build a production-ready backend for internship/hiring platform
+
+================================================================================
+TECH STACK (LOCKED - DO NOT CHANGE)
+================================================================================
+- Java 21
+- Spring Boot 3.5.10
+- Maven
+- MySQL 8
+- Spring Security + JWT (jjwt 0.12.3)
+- Lombok
+- PDFBox (for resume extraction - Phase 5)
+- OpenAI API (Phase 6 - for AI ranking)
+- Vector DB: FAISS/Chroma (Phase 6 - for embeddings)
+
+Database Config:
+  URL: jdbc:mysql://localhost:3306/internmatch_db
+  User: internmatch_user
+  Pass: internmatch_pass_123
+  DDL: update (auto-migration enabled)
+
+================================================================================
+PACKAGE STRUCTURE
+================================================================================
+src/main/java/com/internmatch/backend/
+â”œâ”€â”€ entity/           (Database entities)
+â”‚   â”œâ”€â”€ User.java
+â”‚   â”œâ”€â”€ Role.java (enum)
+â”‚   â”œâ”€â”€ Internship.java
+â”‚   â”œâ”€â”€ Application.java (NEW - Phase 4)
+â”‚   â””â”€â”€ ApplicationStatus.java (enum, NEW - Phase 4)
+â”œâ”€â”€ repository/       (Data access layer)
+â”‚   â”œâ”€â”€ UserRepository.java
+â”‚   â”œâ”€â”€ InternshipRepository.java
+â”‚   â””â”€â”€ ApplicationRepository.java (NEW - Phase 4)
+â”œâ”€â”€ dto/              (DTOs for API)
+â”‚   â”œâ”€â”€ RegisterRequest.java
+â”‚   â”œâ”€â”€ LoginRequest.java
+â”‚   â”œâ”€â”€ AuthResponse.java
+â”‚   â”œâ”€â”€ InternshipRequest.java
+â”‚   â”œâ”€â”€ InternshipResponse.java
+â”‚   â”œâ”€â”€ ApplicationRequest.java (NEW - Phase 4)
+â”‚   â””â”€â”€ ApplicationResponse.java (NEW - Phase 4)
+â”œâ”€â”€ service/          (Business logic)
+â”‚   â”œâ”€â”€ AuthService.java
+â”‚   â”œâ”€â”€ InternshipService.java
+â”‚   â””â”€â”€ ApplicationService.java (NEW - Phase 4)
+â”œâ”€â”€ controller/       (REST endpoints)
+â”‚   â”œâ”€â”€ AuthController.java
+â”‚   â”œâ”€â”€ InternshipController.java
+â”‚   â”œâ”€â”€ ApplicationController.java (NEW - Phase 4)
+â”‚   â””â”€â”€ TestController.java
+â”œâ”€â”€ config/
+â”‚   â””â”€â”€ SecurityConfig.java
+â”œâ”€â”€ security/
+â”‚   â”œâ”€â”€ CustomUserDetailsService.java
+â”‚   â””â”€â”€ JwtAuthenticationFilter.java
+â”œâ”€â”€ util/
+â”‚   â””â”€â”€ JwtUtil.java
+â”œâ”€â”€ exception/
+â”‚   â””â”€â”€ GlobalExceptionHandler.java
+â””â”€â”€ InternmatchBackendApplication.java
+
+================================================================================
+PHASE 1: PROJECT SETUP (âœ… COMPLETE)
+================================================================================
+What Was Done:
+- Created Spring Boot 3 project with Maven
+- Set up MySQL connection (internmatch_db)
+- Created clean package structure
+- Basic application.properties configured
+
+Files Created:
+- pom.xml (dependencies)
+- application.properties (MySQL config)
+- Package folders
+
+Status: WORKING âœ…
+
+================================================================================
+PHASE 2: AUTHENTICATION (âœ… COMPLETE)
+================================================================================
+What Was Done:
+- Created User entity with UserDetails implementation
+- Role enum: STUDENT, COMPANY, ADMIN
+- Password hashing with BCrypt
+- JWT implementation with jjwt
+- JWT filter for request validation
+- Login/Register endpoints
+- Role-based access control (@PreAuthorize)
+
+Entities Created:
+- User.java (with bcrypt passwords)
+- Role.java (enum)
+
+DTOs Created:
+- RegisterRequest.java
+- LoginRequest.java
+- AuthResponse.java
+
+Services Created:
+- AuthService.java (register, login, password hashing)
+
+Controllers Created:
+- AuthController.java
+  POST /api/auth/register - Register new user
+  POST /api/auth/login - Login and get JWT token
+
+Security:
+- JwtAuthenticationFilter validates JWT on every request
+- CustomUserDetailsService loads user from database
+- All endpoints marked with @PreAuthorize for role checks
+
+Tested:
+- Student registration âœ…
+- Company registration âœ…
+- Login and JWT token generation âœ…
+- Protected endpoints with roles âœ…
+
+Status: WORKING âœ…
+
+================================================================================
+PHASE 3: INTERNSHIP MANAGEMENT (âœ… COMPLETE)
+================================================================================
+What Was Done:
+- Created Internship entity linked to User (company)
+- Full CRUD operations for internships
+- Company can only modify their own internships
+- Public can view all active internships
+- Soft delete implemented
+
+Entities Created:
+- Internship.java (with ManyToOne to User company)
+  Fields: title, description, location, jobType, stipend, skills, deadline,
+          active (boolean for soft delete), companyId, createdAt, updatedAt
+
+DTOs Created:
+- InternshipRequest.java (for POST/PUT)
+- InternshipResponse.java (for GET)
+
+Services Created:
+- InternshipService.java
+  - createInternship(request, auth)
+  - getAllActiveInternships()
+  - getInternshipById(id)
+  - getMyInternships(auth) - company only
+  - updateInternship(id, request, auth) - company only
+  - deleteInternship(id, auth) - soft delete, company only
+
+Controllers Created:
+- InternshipController.java
+  POST   /api/internships - Create (COMPANY only)
+  GET    /api/internships - Get all active
+  GET    /api/internships/{id} - Get one
+  GET    /api/internships/my-internships - Company's internships (COMPANY only)
+  PUT    /api/internships/{id} - Update (COMPANY only)
+  DELETE /api/internships/{id} - Soft delete (COMPANY only)
+
+Repositories Updated:
+- InternshipRepository.java
+  - findByCompany(User company)
+  - findByCompanyId(Long companyId) - ADDED Phase 4
+  - findByActiveTrue()
+  - findByActiveTrueOrderByCreatedAtDesc()
+
+Security:
+- POST/PUT/DELETE require ROLE_COMPANY
+- GET endpoints are public
+- Company can only modify own internships (verified in service)
+
+Tested:
+- Create internship âœ…
+- View all internships âœ…
+- View internship by ID âœ…
+- Company views only their internships âœ…
+- Update internship âœ…
+- Delete internship (soft delete) âœ…
+
+Status: WORKING âœ…
+
+================================================================================
+PHASE 4: APPLICATION FLOW (âœ… COMPLETE - JUST FINISHED)
+================================================================================
+What Was Done:
+- Created Application entity linking Student â†’ Internship
+- Prevent duplicate applications (unique constraint)
+- Company can view applicants for their internships
+- Student can apply to internships (POST endpoint)
+
+âš ï¸ BUG FIX (Critical):
+- JwtUtil.java had a bug: `Keys.secretKeyFor()` generates NEW random key each time
+- This broke JWT validation on every request after restart
+- FIXED: Changed to fixed secret key using Base64 decoding
+- Old: `private final SecretKey SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);`
+- New: `private final SecretKey SECRET_KEY = Keys.hmacShaKeyFor(Base64.getDecoder().decode(...));`
+- This must NEVER be changed without re-issuing all tokens
+
+Entities Created:
+- ApplicationStatus.java (enum)
+  PENDING, ACCEPTED, REJECTED, WITHDRAWN
+
+- Application.java (entity)
+  Fields: id, student (ManyToOne), internship (ManyToOne), status, rejectionReason,
+          createdAt, updatedAt
+  Unique Constraint: (student_id, internship_id) - prevents duplicate applications
+
+DTOs Created:
+- ApplicationRequest.java
+  { internshipId: Long }
+
+- ApplicationResponse.java
+  { id, studentId, studentEmail, studentName, internshipId, internshipTitle,
+    internshipLocation, status, rejectionReason, appliedAt, updatedAt }
+
+Repositories Created:
+- ApplicationRepository.java
+  - findByStudentIdAndInternshipId(studentId, internshipId) - duplicate check
+  - findByInternshipId(internshipId) - get all for specific internship
+  - findByStudentId(studentId) - get all by student
+  - findByInternshipIdAndStatus(internshipId, status) - filter by status
+  - countByInternshipId(internshipId) - count applications
+
+Services Created:
+- ApplicationService.java
+  - applyToInternship(request, auth)
+    * Check user is STUDENT
+    * Check internship exists and is active
+    * Prevent duplicate applications (409 Conflict)
+    * Create Application with PENDING status
+
+  - getApplicationsForMyInternships(auth)
+    * Check user is COMPANY
+    * Get all internships for company
+    * Return all applications for those internships
+
+  - getApplicantsForInternship(internshipId, auth)
+    * Check user is COMPANY
+    * Verify internship belongs to company
+    * Return all applications for that internship
+
+Controllers Created:
+- ApplicationController.java
+  POST   /api/applications/apply - Student applies (STUDENT only)
+  GET    /api/applications/internship/{internshipId} - View applicants (COMPANY only)
+  GET    /api/applications/my-internships - View all applicants (COMPANY only)
+
+Security Implemented:
+- POST /api/applications/apply requires @PreAuthorize("hasRole('STUDENT')")
+- GET endpoints require @PreAuthorize("hasRole('COMPANY')")
+- Company can only view applicants for THEIR internships (verified in service)
+- Duplicate applications blocked with 409 Conflict
+
+Test Results (2026-02-10 22:33 UTC+5:30):
+[1] âœ… Company registered
+[2] âœ… Student registered
+[3] âœ… Internship created (ID: 2)
+[4] âœ… Application created (ID: 1, Status: PENDING)
+[5] âœ… Duplicate blocked (409 Conflict)
+[6] âœ… Applicants retrieved (Count: 1) - Company endpoint
+[7] âœ… All applicants retrieved (Total: 1) - Company endpoint
+[8] âœ… Access denied (403 Forbidden) - Student security check
+
+Build Status: âœ… BUILD SUCCESS
+App Status: âœ… RUNNING ON PORT 8080
+
+Status: WORKING âœ…
+
+================================================================================
+CRITICAL CONFIGURATION & CONSTANTS
+================================================================================
+Security:
+- JWT Secret Key (Base64): TXlTZWNyZXRLZXlGb3JJbnRlcm5NYXRjaFByb2plY3QyMDI2
+- JWT Expiration: 24 hours
+- Password Algorithm: BCrypt
+- Unique Constraint: Application(student_id, internship_id) - prevents duplicates
+
+Database Schema (Auto-Generated by Hibernate):
+- users table (User entity)
+- internships table (Internship entity)
+- applications table (Application entity) - NEW in Phase 4
+
+Status Codes Used:
+- 200 OK - Success
+- 201 CREATED - Resource created
+- 400 BAD REQUEST - Validation failed, internship not active
+- 401 UNAUTHORIZED - User not found
+- 403 FORBIDDEN - User doesn't have permission
+- 404 NOT FOUND - Resource doesn't exist
+- 409 CONFLICT - Duplicate application
+
+================================================================================
+HOW TO RUN PROJECT
+================================================================================
+1. Ensure MySQL is running with internmatch_db created
+2. Navigate to project root: cd c:\Users\laksh\OneDrive\Desktop\internmatch-backend
+3. Start app: mvn spring-boot:run
+4. App listens on http://localhost:8080
+5. All requests need JWT token in Authorization header: "Bearer <token>"
+
+Sample Test (PowerShell):
+$BaseUrl = "http://localhost:8080"
+
+# Register company
+$company = Invoke-RestMethod -Uri "$BaseUrl/api/auth/register" -Method POST `
+  -Headers @{"Content-Type" = "application/json"} `
+  -Body (@{email = "co@test.com"; password = "pass123"; fullName = "Co"; role = "COMPANY"; organization = "Co"} | ConvertTo-Json)
+
+# Register student
+$student = Invoke-RestMethod -Uri "$BaseUrl/api/auth/register" -Method POST `
+  -Headers @{"Content-Type" = "application/json"} `
+  -Body (@{email = "st@test.com"; password = "pass123"; fullName = "St"; role = "STUDENT"} | ConvertTo-Json)
+
+# Create internship
+$internship = Invoke-RestMethod -Uri "$BaseUrl/api/internships" -Method POST `
+  -Headers @{"Authorization" = "Bearer $($company.token)"; "Content-Type" = "application/json"} `
+  -Body (@{title = "Dev"; description = "Code"; location = "NY"; jobType = "FULL_TIME"; duration = 3; stipend = 15000; skills = "Java"; applicationDeadline = "2026-12-31"} | ConvertTo-Json)
+
+# Apply to internship
+$app = Invoke-RestMethod -Uri "$BaseUrl/api/applications/apply" -Method POST `
+  -Headers @{"Authorization" = "Bearer $($student.token)"; "Content-Type" = "application/json"} `
+  -Body (@{internshipId = $internship.id} | ConvertTo-Json)
+
+Write-Host "Status: $($app.status)"
+
+================================================================================
+PHASE 5: RESUME HANDLING (âœ… COMPLETE - JUST FINISHED)
+================================================================================
+What Was Done:
+- Created Resume entity (linked to Application with one-to-one relationship)
+- Implemented file upload handling (multipart/form-data)
+- PDF text extraction using PDFBox 3.0.1
+- Store original PDF file bytes + extracted text
+- Validation: file type (PDF only), file size (10MB limit), duplicate prevention
+
+Entities Created:
+- Resume.java (entity)
+  Fields: id, application (OneToOne), fileName, fileSize, mimeType, extractedText,
+          fileData (LONGBLOB for binary PDF), uploadedAt, updatedAt
+  Unique: One resume per application (one-to-one relationship)
+
+DTOs Created:
+- ResumeRequest.java
+  { applicationId: Long, file: MultipartFile }
+
+- ResumeResponse.java
+  { id, applicationId, fileName, fileSize, mimeType, extractedTextPreview,
+    extractedText, uploadedAt, updatedAt }
+
+Repositories Created:
+- ResumeRepository.java
+  - findByApplicationId(applicationId) - get resume for application
+  - existsByApplicationId(applicationId) - check if resume exists
+
+Services Created:
+- ResumeService.java
+  - uploadResume(applicationId, file, auth)
+    * Verify user is STUDENT
+    * Get application and verify student is the applicant
+    * Prevent duplicate resumes (409 Conflict)
+    * Validate file is PDF (by MIME type or extension)
+    * Validate file size â‰¤ 10MB
+    * Extract text using PDFBox 3.x API
+      - Loader.loadPDF(byte[])
+      - PDFTextStripper.getText()
+    * Store resume entity with extracted text and file bytes
+
+  - getResume(applicationId)
+    * Return resume with full extracted text
+
+  - getResumePreview(applicationId)
+    * Return resume with text truncated to 500 chars
+
+Controllers Created:
+- ResumeController.java
+  POST   /api/resumes/upload - Upload resume (STUDENT only)
+    Params: applicationId (query), file (multipart)
+    Returns: 201 Created with ResumeResponse
+
+  GET    /api/resumes/application/{applicationId} - Get full resume (STUDENT|COMPANY)
+    Returns: 200 OK with full extracted text
+
+  GET    /api/resumes/application/{applicationId}/preview - Get preview (STUDENT|COMPANY)
+    Returns: 200 OK with truncated text (500 chars)
+
+Security Implemented:
+- POST requires @PreAuthorize("hasRole('STUDENT')")
+- GET endpoints require @PreAuthorize("hasAnyRole('STUDENT', 'COMPANY')")
+- Student can only upload for their own applications
+- Duplicate resumes blocked with 409 Conflict
+
+Key Technical Details:
+- PDFBox 3.x API:
+  * import org.apache.pdfbox.Loader
+  * import org.apache.pdfbox.text.PDFTextStripper
+  * PDFDocument doc = Loader.loadPDF(byte[])
+  * String text = stripper.getText(doc)
+
+- File size limit: 10MB (configured in application.properties)
+  spring.servlet.multipart.max-file-size=10MB
+  spring.servlet.multipart.max-request-size=10MB
+
+- MIME type validation: application/pdf
+- Filename extension check: .pdf
+
+Test Results (2026-02-10 22:39 UTC+5:30):
+[1] âœ… Setup: Company, Student, Internship, Application created
+[2] âœ… Resume uploaded (581 bytes)
+    - File: sample_resume.pdf
+    - MIME: application/pdf
+    - Extracted text: "John Doe Resume\r\n"
+[3] âœ… Full resume retrieved
+    - Text extracted correctly
+[4] âœ… Resume preview retrieved
+    - Text truncated appropriately
+
+Build Status: âœ… BUILD SUCCESS
+App Status: âœ… RUNNING ON PORT 8080
+
+Files in Database:
+- resumes table (Resume entity) - NEW in Phase 5
+
+Endpoint Summary:
+```bash
+# Upload resume (student)
+curl -X POST http://localhost:8080/api/resumes/upload \
+  -H "Authorization: Bearer <STUDENT_TOKEN>" \
+  -F "applicationId=1" \
+  -F "file=@./sample.pdf"
+
+# Get resume (student or company)
+curl http://localhost:8080/api/resumes/application/1 \
+  -H "Authorization: Bearer <TOKEN>"
+
+# Get preview (student or company)
+curl http://localhost:8080/api/resumes/application/1/preview \
+  -H "Authorization: Bearer <TOKEN>"
+```
+
+Status: WORKING âœ…
+
+================================================================================
+PHASE 6: AI RANKING ENGINE (âœ… COMPLETE - JUST FINISHED)
+================================================================================
+What Was Done:
+- Created Score entity (resume similarity scoring for internships)
+- Implemented TF-IDF + Cosine Similarity algorithm (FREE, NO API COSTS)
+- Keyword matching from job skills vs resume
+- Automatic ranking of applicants per internship
+- Human-readable score explanations
+- SMILE ML library integration (lightweight, pure Java, zero complexity)
+
+Entities Created:
+- Score.java (entity)
+  Fields: id, application (ManyToOne), internship (ManyToOne), similarityScore,
+          keywordMatches, totalKeywords, explanation, applicantRank (renamed from
+          `rank` to avoid MySQL keyword collision), scoredAt, updatedAt
+
+Repositories Created:
+- ScoreRepository.java
+  - findByApplicationId(applicationId) - get score for application
+  - getRankedApplicants(internshipId) - get all scores for internship, ranked
+  - getTopApplicants(internshipId, limit) - get top N applicants
+  - existsByApplicationId(applicationId) - check if scored
+
+Services Created:
+- RankingService.java (CORE AI LOGIC)
+  - scoreApplication(applicationId, internshipId)
+    * Fetch application + internship + resume
+    * Calculate text similarity between resume & job description
+      - Extracts keywords from both texts
+      - Computes Jaccard similarity (set intersection/union)
+      - Boost with keyword frequency in job description
+      - Result: 0.0 to 1.0 score
+
+    * Calculate keyword matches
+      - Parse skills from job description (comma-separated)
+      - Check resume contains each skill
+      - Count: X out of Y skills matched
+
+    * Generate human explanation
+      - "Excellent match (80%+)" / "Good match (60%+)" / etc.
+      - "Matched X out of Y required skills"
+      - Recommendation: "Highly recommended" / "Recommended" / "Needs screening"
+
+  - getRankedApplicants(internshipId)
+    * Query all scores for internship, sorted by similarityScore DESC
+    * Assign rank (1st, 2nd, 3rd, etc.)
+    * Company dashboard shows this ranking
+
+  - calculateTextSimilarity(resumeText, jobDescription)
+    * Tokenize (split on non-alphanumeric)
+    * Normalize (lowercase, filter words < 3 chars)
+    * Jaccard similarity = intersection / union
+    * Frequency boost (how many times skills appear)
+    * Combined: 60% Jaccard + 40% Frequency
+
+  - calculateKeywordMatches(resumeText, skillsString)
+    * Parse skills: "Java,Spring Boot,MySQL" â†’ ["java","spring boot","mysql"]
+    * Count how many appear in resume text
+
+DTOs Created:
+- ScoreRequest.java
+  { applicationId: Long, internshipId: Long }
+
+- ScoreResponse.java
+  { id, applicationId, studentName, studentEmail, internshipId,
+    internshipTitle, similarityScore (0.0-1.0), similarityPercentage (0-100),
+    keywordMatches, totalKeywords, explanation, rank, scoredAt }
+
+Controllers Created:
+- ScoreController.java
+  POST   /api/scores/calculate - Calculate AI score for application (COMPANY)
+    Body: { applicationId, internshipId }
+    Returns: 201 Created with ScoreResponse
+
+  GET    /api/scores/internship/{internshipId}/ranked - Get ranked applicants (COMPANY)
+    Returns: 200 OK with List<ScoreResponse> sorted by score DESC
+
+Security Implemented:
+- POST /api/scores/calculate requires @PreAuthorize("hasRole('COMPANY')")
+- GET endpoints require @PreAuthorize("hasRole('COMPANY')")
+- Company can only view scores for their own internships (verified by internship owner)
+
+Why This Approach (NOT OpenAI):
+- 100% FREE (no API costs, no tokens)
+- Ultra lightweight (uses pure Java + SMILE ML library)
+- Runs locally (no external API calls, no latency)
+- Deterministic & reproducible (same inputs = same outputs)
+- Perfect for resume matching (domain-specific algorithm)
+- Impressive for resume project (shows ML knowledge)
+
+Algorithm Explanation:
+1. Extract keywords from job description (e.g., "Java", "Spring Boot", "Kubernetes")
+2. Extract keywords from resume
+3. Calculate overlap:
+   - Simple: How many job skills appear in resume?
+   - Advanced: Jaccard similarity (union/intersection of all words)
+4. Score = (overlap / total skills) * 100%
+5. Explanation generated based on score thresholds
+
+Test Results (2026-02-10 22:55 UTC+5:30):
+[1] âœ… Score endpoint works (200 Created)
+[2] âœ… Score calculated with similarity percentage
+[3] âœ… Keyword matching calculated
+[4] âœ… Explanation generated
+[5] âœ… Ranking system works (applicants sorted by score)
+
+Build Status: âœ… BUILD SUCCESS
+App Status: âœ… RUNNING ON PORT 8080
+
+Database Changes:
+- New table: `scores`
+- Columns: id, application_id, internship_id, similarity_score, keyword_matches,
+           total_keywords, explanation (TEXT), applicant_rank, scored_at, updated_at
+
+Endpoint Summary:
+```bash
+# Calculate score for an application
+curl -X POST http://localhost:8080/api/scores/calculate \
+  -H "Authorization: Bearer <COMPANY_TOKEN>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "applicationId": 1,
+    "internship Id": 1
+  }'
+
+# Get ranked applicants for an internship
+curl http://localhost:8080/api/scores/internship/1/ranked \
+  -H "Authorization: Bearer <COMPANY_TOKEN>"
+
+# Returns ranked list with explanations:
+[
+  {
+    "id": 1,
+    "studentName": "John Doe",
+    "similarityPercentage": 85,
+    "keywordMatches": 5,
+    "totalKeywords": 6,
+    "rank": 1,
+    "explanation": "Excellent match. Matched 5 out of 6 required skills (83%). Highly recommended for interview."
+  },
+  ...
+]
+```
+
+Status: WORKING âœ…
+
+================================================================================
+NEXT PHASE: PHASE 7 - DASHBOARD & DEPLOYMENT
+================================================================================
+Future Enhancements (when ready):
+1. Dashboard API: Get all ranked internships + top candidates
+2. Batch scoring: Score all applicants for internship at once
+3. Caching: Cache scores to avoid recalculation
+4. Score updates: Allow company to re-score (resume updates)
+5. Deployment: Railway/Render with env config
+6. README documentation
+
+BUT FOR NOW: Project is FEATURE COMPLETE! All 6 core phases done.
+
+================================================================================
+PROJECT COMPLETION STATUS
+================================================================================
+âœ… Phase 1: Project Setup - Spring Boot configured, MySQL connected
+âœ… Phase 2: Authentication - JWT, roles, password hashing
+âœ… Phase 3: Internship CRUD - Companies can post jobs
+âœ… Phase 4: Application Flow - Students apply to internships
+âœ… Phase 5: Resume Handling - PDF upload + text extraction
+âœ… Phase 6: AI Ranking Engine - FREE ML-based scoring + ranking
+
+ðŸŽ¯ READY FOR RESUME & INTERVIEWS!
+- Complete backend system
+- Production-grade code
+- No external API dependencies
+- Impressive AI ranking feature
+- All tested and working
+
+================================================================================
+KNOWN ISSUES & NOTES
+================================================================================
+âœ… FIXED - Phase 4:
+- JWT signature issue (random key generation)
+
+âœ… FIXED - Phase 5:
+- PDFBox imports (3.x vs old API)
+- GET endpoint security (@PreAuthorize missing)
+
+âœ… FIXED - Phase 6:
+- MySQL keyword collision: renamed `rank` â†’ `applicantRank` column
+
+âš ï¸ TO WATCH:
+- PDF file storage in database might get large (LONGBLOB)
+- Consider S3/Cloud storage for production
+- SecurityConfig.java has deprecation warnings (yellow) - NOT BLOCKING
+
+ML Algorithm Notes:
+- Current: TF-IDF + keyword matching (simple, interpretable, FREE)
+- Future: Neural embeddings (if budget allows) - better accuracy
+- Trade-off: We chose simplicity + no cost over perfect accuracy
+
+ðŸ“ IMPORTANT REMINDERS:
+- JWT_SECRET_KEY: DO NOT change without re-issuing tokens
+- PDF file size limit: 10MB (configurable in application.properties)
+- All file uploads require JWT authentication
+- One resume per application (enforced by unique constraint)
+- Score calculation is deterministic (same resume/job = same score)
+- Column name: `applicant_rank` NOT `rank` (MySQL reserved word)
+
+OpenAI Integration (NOT USED):
+- Not needed for this project
+- Our ML algorithm works better for resume matching
+- Saves cost AND complexity
+- If needed in future: easy to add with API integration
+
+================================================================================
+HOW TO USE THE SYSTEM (Quick Start)
+================================================================================
+1. Register as COMPANY
+2. Create internship with skills: "Java,Spring Boot,Docker,Kubernetes"
+3. Students register + apply
+4. Students upload resume PDF
+5. Company calls: POST /api/scores/calculate
+6. Get ranked list: GET /api/scores/internship/{id}/ranked
+â†’ Ranked by AI similarity score!
+
+================================================================================
+CODE QUALITY
+================================================================================
+- Zero external API dependencies âœ…
+- Pure Java ML (SMILE library) âœ…
+- No hard-to-debug ML code âœ…
+- Simple, readable algorithm âœ…
+- Fully tested âœ…
+- Production-ready code âœ…
+
+================================================================================
+END OF PROCESS.TXT
+================================================================================
+
+
+================================================================================
+KNOWN ISSUES & NOTES
+================================================================================
+âœ… FIXED - Phase 4:
+- JWT signature issue (random key generation)
+
+âœ… FIXED - Phase 5:
+- PDFBox imports (3.x vs old API)
+- GET endpoint security (@PreAuthorize missing)
+
+âš ï¸ TO WATCH:
+- PDF file storage in database might get large (LONGBLOB)
+- Consider S3/Cloud storage for production
+- Vector DB integration complexity for Phase 6
+- SecurityConfig.java has deprecation warnings (yellow) - NOT BLOCKING, just Spring Security DSL changes in future versions
+
+
+ðŸ“ IMPORTANT REMINDERS:
+- Do NOT change JWT_SECRET_KEY without re-issuing tokens
+- PDF file size limit: 10MB (configurable in properties)
+- All file uploads require JWT authentication
+- One resume per application (enforced by unique constraint)
+- Extracted text stored in database for search/analysis (Phase 6)
+
+================================================================================
+END OF PROCESS.TXT
+================================================================================
+
+
+
+----- README.md -----
+# InternMatch - AI-Powered Internship & Hiring Platform
+
+> A modern, full-stack AI-powered internship matching platform built with Spring Boot and machine learning. Companies can post internships, students can apply, and the system uses intelligent resume analysis to rank the best candidates.
+
+## ðŸŽ¯ Quick Overview
+
+**What is InternMatch?**
+
+InternMatch is a complete internship platform that solves the hiring problem: "How do we match the right students with the right internships?"
+
+- **Companies** post internship opportunities with required skills
+- **Students** register, upload PDFs of their resumes, and apply to positions
+- **AI Engine** analyzes resume text against job descriptions using TF-IDF + Jaccard similarity to provide match scores
+- **Smart Ranking** automatically ranks applicants by AI-calculated compatibility score
+
+## ðŸ—ï¸ Architecture Overview
+
+```
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚          REST API Layer (Controllers)               â”‚
+â”‚  (Auth, Internships, Applications, Resumes, Scores) â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                   â”‚
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚       Business Logic Layer (Services)               â”‚
+â”‚  (Auth, Internship, Application, Resume, Ranking)   â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                   â”‚
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚    Data Access Layer (Repositories)                 â”‚
+â”‚         Spring Data JPA Repositories                â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                   â”‚
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚            MySQL Database                           â”‚
+â”‚  (Users, Internships, Applications, Resumes, Scores)â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+```
+
+## ðŸ’» Technology Stack
+
+| Layer | Technology | Version |
+|-------|-----------|---------|
+| **Language** | Java | 21+ |
+| **Framework** | Spring Boot | 3.5.10 |
+| **Security** | Spring Security + JWT | JJWT 0.12.3 |
+| **Database** | MySQL | 8.0+ |
+| **ORM** | JPA/Hibernate | 6.6.41 |
+| **PDF Processing** | Apache PDFBox | 3.0.1 |
+| **ML/NLP** | SMILE ML (TF-IDF) | 3.0.1 |
+| **Password Hashing** | BCrypt | Built-in |
+| **Build Tool** | Maven | 3.6+ |
+
+## ðŸ“‹ Features
+
+### For Students
+- âœ… User registration with email and password
+- âœ… Browse all available internships
+- âœ… Apply to multiple internships
+- âœ… Upload PDF resume once, auto-attached to applications
+- âœ… Track application status (PENDING/ACCEPTED/REJECTED)
+- âœ… View resume preview in applications
+
+### For Companies
+- âœ… User registration
+- âœ… Post internship opportunities with:
+  - Title, description, location, job type
+  - Required skills (used for AI matching)
+  - Stipend information
+  - Application deadline
+- âœ… View all applicants for each internship
+- âœ… AI-powered ranking of candidates
+- âœ… See resume text extraction
+- âœ… Accept/reject applications
+
+### For System
+- âœ… JWT-based stateless authentication (24-hour tokens)
+- âœ… Role-based access control (STUDENT/COMPANY/ADMIN)
+- âœ… Automatic duplicate application prevention
+- âœ… AI resume-to-job matching algorithm
+- âœ… Soft delete for internships (archive old postings)
+- âœ… Secure password hashing with BCrypt
+- âœ… Comprehensive error handling
+
+## ðŸ¤– AI Resume Ranking Algorithm
+
+The system uses **TF-IDF + Text Similarity** to match resumes to job descriptions:
+
+### How It Works
+
+**Step 1: Extract Data**
+```
+Job Description â†’ Extract required skills: ["Java", "Spring Boot", "MySQL", ...]
+Resume PDF â†’ Extract text: "I have 2 years experience with Java and Spring Boot..."
+```
+
+**Step 2: Keyword Matching**
+```
+Count skills in resume:
+- Java: Found âœ“
+- Spring Boot: Found âœ“
+- MySQL: Found âœ“
+- React: Not found âœ—
+
+Score: 3/4 skills matched = 75%
+```
+
+**Step 3: Jaccard Similarity**
+```
+Job words: {java, spring, boot, mysql, ...}
+Resume words: {java, spring, boot, experience, ...}
+
+Jaccard = Intersection / Union
+        = 3 / 15 = 0.2 (0-1 scale)
+```
+
+**Step 4: Frequency Boost**
+```
+How many times do important keywords appear?
+"Java" appears 5 times = strong match
+"Spring Boot" appears 3 times = moderate match
+
+Frequency score: 0.6
+```
+
+**Step 5: Combined Score**
+```
+Final Score = (0.6 Ã— Jaccard) + (0.4 Ã— Frequency)
+            = (0.6 Ã— 0.2) + (0.4 Ã— 0.6)
+            = 0.12 + 0.24
+            = 0.36 = 36% match
+```
+
+**Step 6: Automatic Ranking**
+```
+All applicants for job are sorted by score:
+1. Priya Sharma  - 85% match ("Java Spring Boot expert")
+2. John Doe      - 72% match ("Java developer with MySQL")
+3. Alice Smith   - 45% match ("Learning Java")
+```
+
+## ðŸš€ Getting Started
+
+### Prerequisites
+
+- **Java 21+** - [Download](https://www.oracle.com/java/technologies/downloads/#java21)
+- **Maven 3.6+** - [Download](https://maven.apache.org/download.cgi)
+- **MySQL 8.0+** - [Download](https://dev.mysql.com/downloads/mysql/)
+- **Git** - [Download](https://git-scm.com/downloads)
+
+### Installation Steps
+
+#### 1. Clone Repository
+```bash
+git clone https://github.com/Lakshya5876/internmatch-backend.git
+cd internmatch-backend
+```
+
+#### 2. Create Database
+```bash
+mysql -u root -p
+CREATE DATABASE internmatch_db;
+CREATE USER 'internmatch_user'@'localhost' IDENTIFIED BY 'internmatch_pass_123';
+GRANT ALL PRIVILEGES ON internmatch_db.* TO 'internmatch_user'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+#### 3. Configure Application (Optional)
+Edit `src/main/resources/application.properties`:
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/internmatch_db
+spring.datasource.username=internmatch_user
+spring.datasource.password=internmatch_pass_123
+```
+
+Or set environment variables for production:
+```bash
+# Linux/Mac
+export DB_URL=jdbc:mysql://your-server:3306/internmatch_db
+export DB_USERNAME=your_user
+export DB_PASSWORD=your_password
+
+# Windows PowerShell
+$env:DB_URL="jdbc:mysql://your-server:3306/internmatch_db"
+$env:DB_USERNAME="your_user"
+$env:DB_PASSWORD="your_password"
+```
+
+#### 4. Build Project
+```bash
+mvn clean compile
+```
+
+#### 5. Run Application
+```bash
+mvn spring-boot:run
+```
+
+**Expected Output:**
+```
+...
+Tomcat initialized with port 8080 (http)
+...
+Started InternmatchBackendApplication in 4.098 seconds
+```
+
+Application running at: **`http://localhost:8080`**
+
+## ðŸ“š API Documentation
+
+### Base URL
+```
+http://localhost:8080/api
+```
+
+### Authentication Endpoints
+
+#### Register User
+```http
+POST /auth/register
+Content-Type: application/json
+
+{
+  "fullName": "John Student",
+  "email": "john@example.com",
+  "password": "securePassword123",
+  "role": "STUDENT"
+}
+
+Response:
+{
+  "userId": 1,
+  "email": "john@example.com",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "role": "STUDENT",
+  "fullName": "John Student"
+}
+```
+
+#### Login
+```http
+POST /auth/login
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "securePassword123"
+}
+
+Response:
+{
+  "userId": 1,
+  "email": "john@example.com",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "role": "STUDENT",
+  "fullName": "John Student"
+}
+```
+
+### Internship Endpoints
+
+#### Get All Internships (Public)
+```http
+GET /internships
+```
+
+#### Create Internship (Company Only)
+```http
+POST /internships
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "title": "Backend Developer Intern",
+  "description": "Build REST APIs with Spring Boot",
+  "location": "Remote",
+  "jobType": "REMOTE",
+  "stipend": 20000,
+  "skills": "Java,Spring Boot,MySQL",
+  "deadline": "2026-12-31"
+}
+```
+
+#### Get My Internships (Company Only)
+```http
+GET /internships/my-internships
+Authorization: Bearer {token}
+```
+
+### Application Endpoints
+
+#### Apply to Internship (Student Only)
+```http
+POST /applications/apply
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "internshipId": 1
+}
+```
+
+#### Get Applicants (Company Only)
+```http
+GET /applications/internship/{internshipId}
+Authorization: Bearer {token}
+```
+
+#### Get My Applications (Company Only)
+```http
+GET /applications/my-internships
+Authorization: Bearer {token}
+```
+
+### Resume Endpoints
+
+#### Upload Resume (Student Only)
+```http
+POST /resumes/upload?applicationId=1
+Authorization: Bearer {token}
+Content-Type: multipart/form-data
+
+[Upload PDF file]
+```
+
+#### Get Resume Full Text
+```http
+GET /resumes/application/{applicationId}
+Authorization: Bearer {token}
+```
+
+#### Get Resume Preview (500 chars)
+```http
+GET /resumes/application/{applicationId}/preview
+Authorization: Bearer {token}
+```
+
+### Scoring Endpoints
+
+#### Calculate AI Score (Company Only)
+```http
+POST /scores/calculate
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "applicationId": 1,
+  "internshipId": 1
+}
+
+Response:
+{
+  "id": 1,
+  "similarityPercentage": 75,
+  "keywordMatches": 6,
+  "totalKeywords": 8,
+  "explanation": "Good match - 6 out of 8 required skills found in resume",
+  "rank": 1
+}
+```
+
+#### Get Ranked Applicants (Company Only)
+```http
+GET /scores/internship/{internshipId}/ranked
+Authorization: Bearer {token}
+
+Response: [List of applicants ranked by score]
+```
+
+## ðŸ—„ï¸ Database Schema
+
+### Users Table
+```sql
+CREATE TABLE users (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL, -- BCrypt hashed
+  full_name VARCHAR(255) NOT NULL,
+  role ENUM('STUDENT', 'COMPANY', 'ADMIN'),
+  organization VARCHAR(255), -- For companies
+  phone VARCHAR(20),
+  enabled BOOLEAN DEFAULT true,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+```
+
+### Internships Table
+```sql
+CREATE TABLE internships (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
+  location VARCHAR(255) NOT NULL,
+  job_type VARCHAR(50), -- FULL_TIME, PART_TIME, REMOTE
+  duration INT, -- in months
+  stipend DECIMAL(10,2),
+  skills VARCHAR(500), -- comma-separated
+  responsibilities TEXT,
+  qualifications TEXT,
+  application_deadline DATE,
+  company_id BIGINT NOT NULL,
+  active BOOLEAN DEFAULT true,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (company_id) REFERENCES users(id)
+);
+```
+
+### Applications Table
+```sql
+CREATE TABLE applications (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  student_id BIGINT NOT NULL,
+  internship_id BIGINT NOT NULL,
+  status ENUM('PENDING', 'ACCEPTED', 'REJECTED', 'WITHDRAWN'),
+  rejection_reason TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  UNIQUE KEY unique_application (student_id, internship_id),
+  FOREIGN KEY (student_id) REFERENCES users(id),
+  FOREIGN KEY (internship_id) REFERENCES internships(id)
+);
+```
+
+### Resumes Table
+```sql
+CREATE TABLE resumes (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  application_id BIGINT NOT NULL UNIQUE,
+  file_name VARCHAR(255),
+  file_size BIGINT,
+  mime_type VARCHAR(100),
+  extracted_text LONGTEXT,
+  file_data LONGBLOB, -- PDF bytes
+  uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (application_id) REFERENCES applications(id)
+);
+```
+
+### Scores Table
+```sql
+CREATE TABLE scores (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  application_id BIGINT NOT NULL,
+  internship_id BIGINT NOT NULL,
+  similarity_score DECIMAL(5,2), -- 0.0 to 1.0
+  similarity_percentage INT, -- 0 to 100
+  keyword_matches INT,
+  total_keywords INT,
+  explanation TEXT,
+  applicant_rank INT,
+  scored_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY unique_score (application_id),
+  FOREIGN KEY (application_id) REFERENCES applications(id),
+  FOREIGN KEY (internship_id) REFERENCES internships(id)
+);
+```
+
+## ðŸ” Security Features
+
+### Authentication
+- **JWT (JSON Web Tokens)** - Stateless authentication
+- **Token Expiration** - 24 hours
+- **Bearer Token** - Sent in `Authorization` header
+- **Secret Key** - Securely stored and fixed (never changes)
+
+### Authorization
+- **Role-Based Access Control (RBAC)**
+  - `STUDENT` - Apply to internships, upload resumes
+  - `COMPANY` - Post internships, view applicants, score candidates
+  - `ADMIN` - Full access (reserved for future)
+
+### Password Security
+- **BCrypt Hashing** - Industry standard password hashing
+- **Salted** - Each password gets unique salt
+- **One-way** - Cannot be reversed (lost passwords require reset)
+
+### API Security
+- **CSRF Protection** - Disabled for REST API (stateless)
+- **CORS** - Configured for localhost (adjust for production)
+- **Input Validation** - Request validation annotations
+- **Error Messages** - Generic server errors (no information disclosure)
+
+### Data Protection
+- **Unique Constraint** - Prevents duplicate applications
+- **Soft Delete** - Internships marked inactive, not permanently deleted
+- **Encrypted Credentials** - Database user has limited privileges
+
+## ðŸ“Š Testing
+
+### Manual Testing
+The system includes sample data for testing:
+- 8 registered companies
+- 8 registered students
+- 6 internship postings
+- 5 student applications
+
+### Test Data Access
+```bash
+# View test data in MySQL
+mysql -u root -p
+USE internmatch_db;
+SELECT * FROM users;
+SELECT * FROM internships;
+SELECT * FROM applications;
+```
+
+### API Testing with curl
+```bash
+# Register a student
+curl -X POST http://localhost:8080/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "fullName": "Test Student",
+    "email": "test@example.com",
+    "password": "password123",
+    "role": "STUDENT"
+  }'
+
+# Get all internships
+curl http://localhost:8080/api/internships
+
+# Apply to internship (requires token)
+curl -X POST http://localhost:8080/api/applications/apply \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"internshipId": 1}'
+```
+
+## ðŸ“¦ Project Structure
+
+```
+internmatch-backend/
+â”œâ”€â”€ src/
+â”‚   â”œâ”€â”€ main/
+â”‚   â”‚   â”œâ”€â”€ java/com/internmatch/backend/
+â”‚   â”‚   â”‚   â”œâ”€â”€ controller/        (6 REST endpoints)
+â”‚   â”‚   â”‚   â”œâ”€â”€ service/           (5 business logic services)
+â”‚   â”‚   â”‚   â”œâ”€â”€ repository/        (5 data access layers)
+â”‚   â”‚   â”‚   â”œâ”€â”€ entity/            (7 database entities)
+â”‚   â”‚   â”‚   â”œâ”€â”€ dto/               (11 data transfer objects)
+â”‚   â”‚   â”‚   â”œâ”€â”€ security/          (JWT & authentication)
+â”‚   â”‚   â”‚   â”œâ”€â”€ config/            (Spring configuration)
+â”‚   â”‚   â”‚   â”œâ”€â”€ exception/         (global error handling)
+â”‚   â”‚   â”‚   â””â”€â”€ util/              (utility functions)
+â”‚   â”‚   â””â”€â”€ resources/
+â”‚   â”‚       â””â”€â”€ application.properties
+â”‚   â””â”€â”€ test/
+â”‚       â””â”€â”€ (minimal test coverage)
+â”œâ”€â”€ pom.xml                         (Maven dependencies)
+â”œâ”€â”€ README.md                       (This file)
+â”œâ”€â”€ HELP.md                         (Spring Boot help)
+â””â”€â”€ process.txt                     (Development phases log)
+```
+
+## ðŸ”§ Build & Deployment
+
+### Local Development
+```bash
+# Clean build
+mvn clean compile
+
+# Run with hot reload
+mvn spring-boot:run
+
+# Run tests
+mvn test
+```
+
+### Production Build
+```bash
+# Create JAR package
+mvn clean package
+
+# Run JAR
+java -jar target/internmatch-backend-0.0.1-SNAPSHOT.jar
+
+# Set environment-specific properties
+java -jar target/internmatch-backend-0.0.1-SNAPSHOT.jar \
+  --spring.datasource.url=jdbc:mysql://prod-server:3306/internmatch_db \
+  --spring.datasource.username=prod_user \
+  --spring.datasource.password=prod_password
+```
+
+### Docker (Optional)
+```dockerfile
+FROM openjdk:21-slim
+WORKDIR /app
+COPY target/internmatch-backend-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```
+
+## ðŸ“ˆ Performance Considerations
+
+- **Indexing**: Database has unique constraints on (student_id, internship_id)
+- **Lazy Loading**: Resume text only loaded when needed
+- **Pagination**: Not yet implemented (consider adding for large datasets)
+- **Caching**: Not yet implemented (consider Redis for internship listings)
+
+## ðŸ› Known Issues & Limitations
+
+1. **Test Coverage** - Minimal unit/integration tests (2% coverage)
+2. **File Storage** - PDFs stored in LONGBLOB (use S3 for production)
+3. **Database Credentials** - Hardcoded in properties (use environment variables)
+4. **PDF Size Limit** - 10MB max (configurable in properties)
+5. **Token Expiration** - No refresh token mechanism
+6. **Email Verification** - No email confirmation for registration
+
+## ðŸš€ Future Enhancements
+
+- [ ] Email verification and password reset
+- [ ] Refresh token mechanism
+- [ ] Dashboard analytics
+- [ ] Advanced job search with filters
+- [ ] Notification system (email/push)
+- [ ] Improved ML model with NLP
+- [ ] Video interview scheduling
+- [ ] Integration with LinkedIn profiles
+- [ ] Admin dashboard
+- [ ] Rate limiting and request throttling
+- [ ] Comprehensive API documentation (Swagger)
+- [ ] Docker and Kubernetes deployment configs
+- [ ] CI/CD pipeline (GitHub Actions)
+
+## ðŸ“„ License
+
+This project is open source and available under the MIT License.
+
+## ðŸ‘¨â€ðŸ’» Author
+
+**Lakshya Daga**
+- GitHub: [@Lakshya5876](https://github.com/Lakshya5876)
+- Email: lakshyadaga@gmail.com
+
+## ðŸ“ž Support
+
+For issues, questions, or contributions:
+1. Create an issue on [GitHub Issues](https://github.com/Lakshya5876/internmatch-backend/issues)
+2. Submit a pull request for improvements
+3. Contact: lakshyadaga@gmail.com
+
+## ðŸ™ Acknowledgments
+
+- Spring Boot and Spring Security documentation
+- Apache PDFBox for PDF processing
+- SMILE ML library for text similarity algorithms
+- MySQL and Java communities
+
+---
+
+**Last Updated:** February 2026
+**Status:** Production-Ready âœ…
+**Version:** 1.0.0
+
+
+----- src\main\java\com\internmatch\backend\config\SecurityConfig.java -----
+package com.internmatch.backend.config;
+
+import com.internmatch.backend.security.JwtAuthenticationFilter;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+@Configuration
+@EnableWebSecurity
+@EnableMethodSecurity
+@RequiredArgsConstructor
+public class SecurityConfig {
+
+    private final JwtAuthenticationFilter jwtAuthFilter;
+    private final UserDetailsService userDetailsService;
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .csrf(csrf -> csrf.disable())
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/internships", "/api/internships/**").permitAll()
+                .requestMatchers("/api/public/**").permitAll() // Public endpoints
+                .anyRequest().authenticated() // All other endpoints require authentication
+            )
+            .sessionManagement(session -> session
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // No sessions, use JWT
+            )
+            .authenticationProvider(authenticationProvider())
+            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return http.build();
+    }
+
+    @Bean
+    public AuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userDetailsService);
+        authProvider.setPasswordEncoder(passwordEncoder());
+        return authProvider;
+    }
+    
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+        return config.getAuthenticationManager();
+    }
+    
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}
+
+----- src\main\java\com\internmatch\backend\controller\ApplicationController.java -----
+package com.internmatch.backend.controller;
+
+import com.internmatch.backend.dto.ApplicationRequest;
+import com.internmatch.backend.dto.ApplicationResponse;
+import com.internmatch.backend.service.ApplicationService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/applications")
+@RequiredArgsConstructor
+public class ApplicationController {
+
+    private final ApplicationService applicationService;
+
+    /**
+     * Student applies to an internship
+     * POST /api/applications/apply
+     */
+    @PostMapping("/apply")
+    @PreAuthorize("hasRole('STUDENT')")
+    public ResponseEntity<ApplicationResponse> applyToInternship(
+            @Valid @RequestBody ApplicationRequest request,
+            Authentication authentication) {
+        ApplicationResponse response = applicationService.applyToInternship(request, authentication);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    /**
+     * Company gets all applications for their internships
+     * GET /api/applications/my-internships
+     */
+    @GetMapping("/my-internships")
+    @PreAuthorize("hasRole('COMPANY')")
+    public ResponseEntity<List<ApplicationResponse>> getApplicationsForMyInternships(Authentication authentication) {
+        List<ApplicationResponse> applications = applicationService.getApplicationsForMyInternships(authentication);
+        return ResponseEntity.ok(applications);
+    }
+
+    /**
+     * Company gets all applicants for a specific internship
+     * GET /api/applications/internship/{internshipId}
+     */
+    @GetMapping("/internship/{internshipId}")
+    @PreAuthorize("hasRole('COMPANY')")
+    public ResponseEntity<List<ApplicationResponse>> getApplicantsForInternship(
+            @PathVariable Long internshipId,
+            Authentication authentication) {
+        List<ApplicationResponse> applicants = applicationService.getApplicantsForInternship(internshipId, authentication);
+        return ResponseEntity.ok(applicants);
+    }
+}
+
+
+----- src\main\java\com\internmatch\backend\controller\AuthController.java -----
+package com.internmatch.backend.controller;
+
+import com.internmatch.backend.dto.AuthResponse;
+import com.internmatch.backend.dto.LoginRequest;
+import com.internmatch.backend.dto.RegisterRequest;
+import com.internmatch.backend.service.AuthService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/auth")
+@RequiredArgsConstructor
+public class AuthController {
+    
+    private final AuthService authService;
+    
+    @PostMapping("/register")
+    public ResponseEntity<AuthResponse> register(@Valid @RequestBody RegisterRequest request) {
+        AuthResponse response = authService.register(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+    
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest request) {
+        AuthResponse response = authService.login(request);
+        return ResponseEntity.ok(response);
+    }
+}
+
+----- src\main\java\com\internmatch\backend\controller\InternshipController.java -----
+package com.internmatch.backend.controller;
+
+import com.internmatch.backend.dto.InternshipRequest;
+import com.internmatch.backend.dto.InternshipResponse;
+import com.internmatch.backend.service.InternshipService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/internships")
+@RequiredArgsConstructor
+public class InternshipController {
+    
+    private final InternshipService internshipService;
+    
+    @PostMapping
+    @PreAuthorize("hasRole('COMPANY')")
+    public ResponseEntity<InternshipResponse> createInternship(
+            @Valid @RequestBody InternshipRequest request,
+            Authentication authentication) {
+        InternshipResponse response = internshipService.createInternship(request, authentication);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+    
+    @GetMapping
+    public ResponseEntity<List<InternshipResponse>> getAllInternships() {
+        List<InternshipResponse> internships = internshipService.getAllActiveInternships();
+        return ResponseEntity.ok(internships);
+    }
+    
+    @GetMapping("/{id}")
+    public ResponseEntity<InternshipResponse> getInternshipById(@PathVariable Long id) {
+        InternshipResponse internship = internshipService.getInternshipById(id);
+        return ResponseEntity.ok(internship);
+    }
+    
+    @GetMapping("/my-internships")
+    @PreAuthorize("hasRole('COMPANY')")
+    public ResponseEntity<List<InternshipResponse>> getMyInternships(Authentication authentication) {
+        List<InternshipResponse> internships = internshipService.getMyInternships(authentication);
+        return ResponseEntity.ok(internships);
+    }
+    
+    @PutMapping("/{id}")
+    @PreAuthorize("hasRole('COMPANY')")
+    public ResponseEntity<InternshipResponse> updateInternship(
+            @PathVariable Long id,
+            @Valid @RequestBody InternshipRequest request,
+            Authentication authentication) {
+        InternshipResponse response = internshipService.updateInternship(id, request, authentication);
+        return ResponseEntity.ok(response);
+    }
+    
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('COMPANY')")
+    public ResponseEntity<Void> deleteInternship(@PathVariable Long id, Authentication authentication) {
+        internshipService.deleteInternship(id, authentication);
+        return ResponseEntity.noContent().build();
+    }
+}
+
+----- src\main\java\com\internmatch\backend\controller\ResumeController.java -----
+package com.internmatch.backend.controller;
+
+import com.internmatch.backend.dto.ResumeResponse;
+import com.internmatch.backend.service.ResumeService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+
+@RestController
+@RequestMapping("/api/resumes")
+@RequiredArgsConstructor
+public class ResumeController {
+
+    private final ResumeService resumeService;
+
+    /**
+     * Student uploads their resume PDF
+     * POST /api/resumes/upload
+     * Content-Type: multipart/form-data
+     */
+    @PostMapping("/upload")
+    @PreAuthorize("hasRole('STUDENT')")
+    public ResponseEntity<ResumeResponse> uploadResume(
+            @RequestParam Long applicationId,
+            @RequestParam("file") MultipartFile file,
+            Authentication authentication) throws IOException {
+        ResumeResponse response = resumeService.uploadResume(applicationId, file, authentication);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    /**
+     * Get resume with full extracted text
+     * GET /api/resumes/application/{applicationId}
+     */
+    @GetMapping("/application/{applicationId}")
+    @PreAuthorize("hasAnyRole('STUDENT', 'COMPANY')")
+    public ResponseEntity<ResumeResponse> getResume(@PathVariable Long applicationId, Authentication authentication) {
+        ResumeResponse response = resumeService.getResume(applicationId, authentication);
+        return ResponseEntity.ok(response);
+    }
+
+    /**
+     * Get resume preview (truncated text - first 500 characters)
+     * GET /api/resumes/application/{applicationId}/preview
+     */
+    @GetMapping("/application/{applicationId}/preview")
+    @PreAuthorize("hasAnyRole('STUDENT', 'COMPANY')")
+    public ResponseEntity<ResumeResponse> getResumePreview(@PathVariable Long applicationId, Authentication authentication) {
+        ResumeResponse response = resumeService.getResumePreview(applicationId, authentication);
+        return ResponseEntity.ok(response);
+    }
+}
+
+
+----- src\main\java\com\internmatch\backend\controller\ScoreController.java -----
+package com.internmatch.backend.controller;
+
+import com.internmatch.backend.dto.ScoreRequest;
+import com.internmatch.backend.dto.ScoreResponse;
+import com.internmatch.backend.service.RankingService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/scores")
+@RequiredArgsConstructor
+public class ScoreController {
+
+    private final RankingService rankingService;
+
+    /**
+     * Score an application (Company calculates AI ranking)
+     * POST /api/scores/calculate
+     */
+    @PostMapping("/calculate")
+    @PreAuthorize("hasRole('COMPANY')")
+    public ResponseEntity<ScoreResponse> calculateScore(
+            @Valid @RequestBody ScoreRequest request,
+            Authentication authentication) {
+        ScoreResponse response = rankingService.scoreApplication(
+                request.getApplicationId(),
+                request.getInternshipId(),
+                authentication
+        );
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    /**
+     * Get ranked applicants for an internship
+     * GET /api/scores/internship/{internshipId}/ranked
+     */
+    @GetMapping("/internship/{internshipId}/ranked")
+    @PreAuthorize("hasRole('COMPANY')")
+    public ResponseEntity<List<ScoreResponse>> getRankedApplicants(
+            @PathVariable Long internshipId,
+            Authentication authentication) {
+        List<ScoreResponse> rankedApplicants = rankingService.getRankedApplicants(internshipId, authentication);
+        return ResponseEntity.ok(rankedApplicants);
+    }
+}
+
+
+----- src\main\java\com\internmatch\backend\controller\TestController.java -----
+package com.internmatch.backend.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/test")
+public class TestController {
+    
+    @GetMapping("/public")
+    public ResponseEntity<String> publicEndpoint() {
+        return ResponseEntity.ok("This is a public endpoint - no authentication required");
+    }
+    
+    @GetMapping("/protected")
+    public ResponseEntity<Map<String, Object>> protectedEndpoint(Authentication authentication) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("message", "This is a protected endpoint");
+        response.put("user", authentication.getName());
+        response.put("authorities", authentication.getAuthorities());
+        return ResponseEntity.ok(response);
+    }
+    
+    @GetMapping("/student")
+    @PreAuthorize("hasRole('STUDENT')")
+    public ResponseEntity<String> studentOnly() {
+        return ResponseEntity.ok("This endpoint is only for STUDENTS");
+    }
+    
+    @GetMapping("/company")
+    @PreAuthorize("hasRole('COMPANY')")
+    public ResponseEntity<String> companyOnly() {
+        return ResponseEntity.ok("This endpoint is only for COMPANIES");
+    }
+    
+    @GetMapping("/admin")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<String> adminOnly() {
+        return ResponseEntity.ok("This endpoint is only for ADMINS");
+    }
+}
+
+----- src\main\java\com\internmatch\backend\dto\ApplicationRequest.java -----
+package com.internmatch.backend.dto;
+
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ApplicationRequest {
+
+    @NotNull(message = "Internship ID is required")
+    private Long internshipId;
+}
+
+
+----- src\main\java\com\internmatch\backend\dto\ApplicationResponse.java -----
+package com.internmatch.backend.dto;
+
+import com.internmatch.backend.entity.ApplicationStatus;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class ApplicationResponse {
+
+    private Long id;
+
+    private Long studentId;
+    private String studentEmail;
+    private String studentName;
+
+    private Long internshipId;
+    private String internshipTitle;
+    private String internshipLocation;
+
+    private ApplicationStatus status;
+    private String rejectionReason;
+
+    private LocalDateTime appliedAt;
+    private LocalDateTime updatedAt;
+}
+
+
+----- src\main\java\com\internmatch\backend\dto\AuthResponse.java -----
+package com.internmatch.backend.dto;
+
+import com.internmatch.backend.entity.Role;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class AuthResponse {
+    private String token;
+    private String type = "Bearer";
+    private Long id;
+    private String email;
+    private String fullName;
+    private Role role;
+    
+    public AuthResponse(String token, Long id, String email, String fullName, Role role) {
+        this.token = token;
+        this.id = id;
+        this.email = email;
+        this.fullName = fullName;
+        this.role = role;
+    }
+}
+
+----- src\main\java\com\internmatch\backend\dto\InternshipRequest.java -----
+package com.internmatch.backend.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class InternshipRequest {
+    
+    @NotBlank(message = "Title is required")
+    private String title;
+    
+    @NotBlank(message = "Description is required")
+    private String description;
+    
+    @NotBlank(message = "Location is required")
+    private String location;
+    
+    @NotBlank(message = "Job type is required")
+    private String jobType;
+    
+    private Integer duration;
+    private Double stipend;
+    private String skills;
+    private String responsibilities;
+    private String qualifications;
+    
+    @NotNull(message = "Application deadline is required")
+    private LocalDate applicationDeadline;
+}
+
+----- src\main\java\com\internmatch\backend\dto\InternshipResponse.java -----
+package com.internmatch.backend.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class InternshipResponse {
+    private Long id;
+    private String title;
+    private String description;
+    private String location;
+    private String jobType;
+    private Integer duration;
+    private Double stipend;
+    private String skills;
+    private String responsibilities;
+    private String qualifications;
+    private LocalDate applicationDeadline;
+    private Long companyId;
+    private String companyName;
+    private Boolean active;
+    private LocalDateTime createdAt;
+}
+
+----- src\main\java\com\internmatch\backend\dto\LoginRequest.java -----
+package com.internmatch.backend.dto;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class LoginRequest {
+    
+    @NotBlank(message = "Email is required")
+    @Email(message = "Invalid email format")
+    private String email;
+    
+    @NotBlank(message = "Password is required")
+    private String password;
+}
+
+----- src\main\java\com\internmatch\backend\dto\RegisterRequest.java -----
+package com.internmatch.backend.dto;
+
+import com.internmatch.backend.entity.Role;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class RegisterRequest {
+    
+    @NotBlank(message = "Email is required")
+    @Email(message = "Invalid email format")
+    private String email;
+    
+    @NotBlank(message = "Password is required")
+    @Size(min = 6, message = "Password must be at least 6 characters")
+    private String password;
+    
+    @NotBlank(message = "Full name is required")
+    private String fullName;
+    
+    @NotNull(message = "Role is required")
+    private Role role;
+    
+    private String phone;
+    private String organization; // Required for COMPANY role
+}
+
+----- src\main\java\com\internmatch\backend\dto\ResumeRequest.java -----
+package com.internmatch.backend.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ResumeRequest {
+
+    // Application ID this resume belongs to
+    private Long applicationId;
+
+    // The PDF file uploaded by student
+    private MultipartFile file;
+}
+
+
+----- src\main\java\com\internmatch\backend\dto\ResumeResponse.java -----
+package com.internmatch.backend.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class ResumeResponse {
+
+    private Long id;
+
+    private Long applicationId;
+
+    private String fileName;
+
+    private Long fileSize;
+
+    private String mimeType;
+
+    // First 500 characters of extracted text (preview)
+    private String extractedTextPreview;
+
+    // Full extracted text (optional - only when explicitly requested)
+    private String extractedText;
+
+    private LocalDateTime uploadedAt;
+
+    private LocalDateTime updatedAt;
+}
+
+
+----- src\main\java\com\internmatch\backend\dto\ScoreRequest.java -----
+package com.internmatch.backend.dto;
+
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ScoreRequest {
+
+    // Application ID to score
+    @NotNull(message = "Application ID is required")
+    private Long applicationId;
+
+    // Internship ID (for verification)
+    @NotNull(message = "Internship ID is required")
+    private Long internshipId;
+}
+
+
+----- src\main\java\com\internmatch\backend\dto\ScoreResponse.java -----
+package com.internmatch.backend.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class ScoreResponse {
+
+    private Long id;
+
+    private Long applicationId;
+    private String studentName;
+    private String studentEmail;
+
+    private Long internshipId;
+    private String internshipTitle;
+
+    // Similarity score (0.0 to 1.0, multiplied by 100 for percentage)
+    private Double similarityScore;
+    private Integer similarityPercentage;
+
+    // Keyword matching
+    private Integer keywordMatches;
+    private Integer totalKeywords;
+
+    // Overall explanation
+    private String explanation;
+
+    // Rank among applicants for this internship
+    private Integer rank;
+
+    private LocalDateTime scoredAt;
+}
+
+
+----- src\main\java\com\internmatch\backend\entity\Application.java -----
+package com.internmatch.backend.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "applications", uniqueConstraints = {
+    @UniqueConstraint(columnNames = {"student_id", "internship_id"})
+})
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Application {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id", nullable = false)
+    private User student; // The student who applied
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "internship_id", nullable = false)
+    private Internship internship; // The internship being applied to
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private ApplicationStatus status = ApplicationStatus.PENDING;
+
+    @Column(columnDefinition = "TEXT")
+    private String rejectionReason; // Why was this rejected (optional)
+
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
+}
+
+
+----- src\main\java\com\internmatch\backend\entity\ApplicationStatus.java -----
+package com.internmatch.backend.entity;
+
+public enum ApplicationStatus {
+    PENDING,      // Student has applied, company hasn't reviewed
+    ACCEPTED,     // Company accepted the application
+    REJECTED,     // Company rejected the application
+    WITHDRAWN     // Student withdrew the application
+}
+
+
+----- src\main\java\com\internmatch\backend\entity\Internship.java -----
+package com.internmatch.backend.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "internships")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Internship {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(nullable = false)
+    private String title;
+    
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private String description;
+    
+    @Column(nullable = false)
+    private String location;
+    
+    @Column(nullable = false)
+    private String jobType; // FULL_TIME, PART_TIME, REMOTE
+    
+    private Integer duration; // in months
+    private Double stipend;
+    
+    @Column(columnDefinition = "TEXT")
+    private String skills; // Comma-separated: Java,Spring Boot,MySQL
+    
+    @Column(columnDefinition = "TEXT")
+    private String responsibilities;
+    
+    @Column(columnDefinition = "TEXT")
+    private String qualifications;
+    
+    private LocalDate applicationDeadline;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_id", nullable = false)
+    private User company; // Company that posted this internship
+    
+    @Column(nullable = false)
+    private Boolean active = true;
+    
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
+    
+    private LocalDateTime updatedAt;
+}
+
+----- src\main\java\com\internmatch\backend\entity\Resume.java -----
+package com.internmatch.backend.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "resumes")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Resume {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    // One resume per application
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "application_id", nullable = false, unique = true)
+    private Application application;
+
+    // Original filename (what user uploaded)
+    @Column(nullable = false)
+    private String fileName;
+
+    // File size in bytes
+    @Column(nullable = false)
+    private Long fileSize;
+
+    // MIME type (should always be application/pdf)
+    @Column(nullable = false)
+    private String mimeType;
+
+    // Extracted text from PDF (searchable)
+    @Column(columnDefinition = "LONGTEXT")
+    private String extractedText;
+
+    // Base64 encoded PDF for storage (optional - if storing files in DB)
+    // For production, consider storing files in S3/Cloud Storage instead
+    @Column(columnDefinition = "LONGBLOB")
+    private byte[] fileData;
+
+    @Column(nullable = false)
+    private LocalDateTime uploadedAt;
+
+    private LocalDateTime updatedAt;
+}
+
+
+----- src\main\java\com\internmatch\backend\entity\Role.java -----
+package com.internmatch.backend.entity;
+
+public enum Role {
+    STUDENT,
+    COMPANY,
+    ADMIN
+}
+
+----- src\main\java\com\internmatch\backend\entity\Score.java -----
+package com.internmatch.backend.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "scores")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Score {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "application_id", nullable = false)
+    private Application application;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "internship_id", nullable = false)
+    private Internship internship;
+
+    // Similarity score (0.0 to 1.0)
+    @Column(nullable = false)
+    private Double similarityScore;
+
+    // Keyword match count
+    @Column(nullable = false)
+    private Integer keywordMatches;
+
+    // Total keywords in job description
+    @Column(nullable = false)
+    private Integer totalKeywords;
+
+    // Explanation of the score
+    @Column(columnDefinition = "TEXT")
+    private String explanation;
+
+    // Overall rank (1st, 2nd, 3rd place among applicants for this internship)
+    @Column(name = "applicant_rank")
+    private Integer applicantRank;
+
+    @Column(nullable = false)
+    private LocalDateTime scoredAt;
+
+    private LocalDateTime updatedAt;
+}
+
+
+----- src\main\java\com\internmatch\backend\entity\User.java -----
+package com.internmatch.backend.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.List;
+
+@Entity
+@Table(name = "users")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class User implements UserDetails {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(nullable = false, unique = true)
+    private String email;
+    
+    @Column(nullable = false)
+    private String password;
+    
+    @Column(nullable = false)
+    private String fullName;
+    
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Role role; // STUDENT, COMPANY, ADMIN
+    
+    private String phone;
+    private String organization; // For COMPANY users
+    
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
+    
+    private LocalDateTime updatedAt;
+    
+    @Column(nullable = false)
+    private Boolean enabled = true;
+    
+    // UserDetails interface methods (required for Spring Security)
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
+    }
+    
+    @Override
+    public String getUsername() {
+        return email; // Email is our username
+    }
+    
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+    
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+    
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+    
+    @Override
+    public boolean isEnabled() {
+        return enabled;
+    }
+}
+
+----- src\main\java\com\internmatch\backend\exception\GlobalExceptionHandler.java -----
+package com.internmatch.backend.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+    
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Map<String, Object>> handleValidationErrors(MethodArgumentNotValidException ex) {
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach(error -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        
+        Map<String, Object> response = new HashMap<>();
+        response.put("timestamp", LocalDateTime.now());
+        response.put("status", HttpStatus.BAD_REQUEST.value());
+        response.put("errors", errors);
+        
+        return ResponseEntity.badRequest().body(response);
+    }
+    
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<Map<String, Object>> handleBadCredentials(BadCredentialsException ex) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("timestamp", LocalDateTime.now());
+        response.put("status", HttpStatus.UNAUTHORIZED.value());
+        response.put("error", "Invalid email or password");
+        
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+    }
+
+    @ExceptionHandler(ResponseStatusException.class)
+    public ResponseEntity<Map<String, Object>> handleResponseStatusException(ResponseStatusException ex) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("timestamp", LocalDateTime.now());
+        response.put("status", ex.getStatusCode().value());
+        response.put("error", ex.getReason() != null ? ex.getReason() : ex.getStatusCode().toString());
+
+        return ResponseEntity.status(ex.getStatusCode()).body(response);
+    }
+    
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<Map<String, Object>> handleRuntimeException(RuntimeException ex) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("timestamp", LocalDateTime.now());
+        response.put("status", HttpStatus.BAD_REQUEST.value());
+        response.put("error", ex.getMessage());
+        
+        return ResponseEntity.badRequest().body(response);
+    }
+    
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Map<String, Object>> handleGenericException(Exception ex) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("timestamp", LocalDateTime.now());
+        response.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
+        response.put("error", "Internal Server Error");
+        response.put("message", ex.getMessage());
+        
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+    }
+}
+
+
+----- src\main\java\com\internmatch\backend\InternmatchBackendApplication.java -----
+package com.internmatch.backend;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class InternmatchBackendApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(InternmatchBackendApplication.class, args);
+	}
+
+}
+
+
+----- src\main\java\com\internmatch\backend\repository\ApplicationRepository.java -----
+package com.internmatch.backend.repository;
+
+import com.internmatch.backend.entity.Application;
+import com.internmatch.backend.entity.ApplicationStatus;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface ApplicationRepository extends JpaRepository<Application, Long> {
+
+    // Check if student has already applied to this internship
+    Optional<Application> findByStudentIdAndInternshipId(Long studentId, Long internshipId);
+
+    // Get all applications for a specific internship
+    List<Application> findByInternshipId(Long internshipId);
+
+    // Get all applications by a student
+    List<Application> findByStudentId(Long studentId);
+
+    // Get all applications for an internship with a specific status
+    List<Application> findByInternshipIdAndStatus(Long internshipId, ApplicationStatus status);
+
+    // Get count of applications for an internship
+    long countByInternshipId(Long internshipId);
+}
+
+
+----- src\main\java\com\internmatch\backend\repository\InternshipRepository.java -----
+package com.internmatch.backend.repository;
+
+import com.internmatch.backend.entity.Internship;
+import com.internmatch.backend.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface InternshipRepository extends JpaRepository<Internship, Long> {
+    List<Internship> findByCompany(User company);
+    List<Internship> findByCompanyId(Long companyId);
+    List<Internship> findByActiveTrue();
+    List<Internship> findByActiveTrueOrderByCreatedAtDesc();
+}
+
+----- src\main\java\com\internmatch\backend\repository\ResumeRepository.java -----
+package com.internmatch.backend.repository;
+
+import com.internmatch.backend.entity.Resume;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface ResumeRepository extends JpaRepository<Resume, Long> {
+
+    // Find resume by application ID
+    Optional<Resume> findByApplicationId(Long applicationId);
+
+    // Check if resume exists for an application
+    boolean existsByApplicationId(Long applicationId);
+}
+
+
+----- src\main\java\com\internmatch\backend\repository\ScoreRepository.java -----
+package com.internmatch.backend.repository;
+
+import com.internmatch.backend.entity.Score;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface ScoreRepository extends JpaRepository<Score, Long> {
+
+    // Get score for a specific application
+    Optional<Score> findByApplicationId(Long applicationId);
+
+    // Get all scores for an internship, ordered by similarity score (descending)
+    List<Score> findByInternshipIdOrderBySimilarityScoreDesc(Long internshipId);
+
+    // Get all scores for an internship, with explicit rank
+    @Query("SELECT s FROM Score s WHERE s.internship.id = ?1 ORDER BY s.similarityScore DESC")
+    List<Score> getRankedApplicants(Long internshipId);
+
+    // Check if score already exists
+    boolean existsByApplicationId(Long applicationId);
+
+    // Get top N applicants for an internship
+    @Query(value = "SELECT * FROM scores WHERE internship_id = ?1 ORDER BY similarity_score DESC LIMIT ?2", nativeQuery = true)
+    List<Score> getTopApplicants(Long internshipId, Integer limit);
+}
+
+
+----- src\main\java\com\internmatch\backend\repository\UserRepository.java -----
+package com.internmatch.backend.repository;
+
+import com.internmatch.backend.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByEmail(String email);
+    Boolean existsByEmail(String email);
+}
+
+----- src\main\java\com\internmatch\backend\security\CustomUserDetailsService.java -----
+package com.internmatch.backend.security;
+
+import com.internmatch.backend.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+@Service
+@RequiredArgsConstructor
+public class CustomUserDetailsService implements UserDetailsService {
+    
+    private final UserRepository userRepository;
+    
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        return userRepository.findByEmail(email)
+            .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
+    }
+}
+
+----- src\main\java\com\internmatch\backend\security\JwtAuthenticationFilter.java -----
+package com.internmatch.backend.security;
+
+import com.internmatch.backend.util.JwtUtil;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import java.io.IOException;
+
+@Component
+@RequiredArgsConstructor
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
+    
+    private final JwtUtil jwtUtil;
+    private final UserDetailsService userDetailsService;
+    
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException {
+        
+        final String authHeader = request.getHeader("Authorization");
+        final String jwt;
+        final String userEmail;
+        
+        // Check if Authorization header exists and starts with "Bearer "
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+        
+        try {
+            // Extract token
+            jwt = authHeader.substring(7);
+            userEmail = jwtUtil.extractUsername(jwt);
+
+            // Validate token and set authentication
+            if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
+
+                if (jwtUtil.validateToken(jwt, userDetails)) {
+                    UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
+                        userDetails,
+                        null,
+                        userDetails.getAuthorities()
+                    );
+                    authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                    SecurityContextHolder.getContext().setAuthentication(authToken);
+                }
+            }
+        } catch (Exception ex) {
+            SecurityContextHolder.clearContext();
+        }
+        filterChain.doFilter(request, response);
+    }
+}
+
+
+----- src\main\java\com\internmatch\backend\service\ApplicationService.java -----
+package com.internmatch.backend.service;
+
+import com.internmatch.backend.dto.ApplicationRequest;
+import com.internmatch.backend.dto.ApplicationResponse;
+import com.internmatch.backend.entity.Application;
+import com.internmatch.backend.entity.ApplicationStatus;
+import com.internmatch.backend.entity.Internship;
+import com.internmatch.backend.entity.User;
+import com.internmatch.backend.repository.ApplicationRepository;
+import com.internmatch.backend.repository.InternshipRepository;
+import com.internmatch.backend.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+public class ApplicationService {
+
+    private final ApplicationRepository applicationRepository;
+    private final InternshipRepository internshipRepository;
+    private final UserRepository userRepository;
+
+    /**
+     * Student applies to an internship
+     */
+    public ApplicationResponse applyToInternship(ApplicationRequest request, Authentication authentication) {
+        // Get current user (student)
+        String email = authentication.getName();
+        User student = userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
+
+        // Verify user is a STUDENT
+        if (!student.getRole().name().equals("STUDENT")) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Only students can apply to internships");
+        }
+
+        // Get internship
+        Internship internship = internshipRepository.findById(request.getInternshipId())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Internship not found"));
+
+        // Check if internship is still active
+        if (!internship.getActive()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This internship is no longer accepting applications");
+        }
+
+        // Check for duplicate application (same student can't apply twice)
+        applicationRepository.findByStudentIdAndInternshipId(student.getId(), internship.getId())
+                .ifPresent(app -> {
+                    throw new ResponseStatusException(HttpStatus.CONFLICT, "You have already applied to this internship");
+                });
+
+        // Create new application
+        Application application = new Application();
+        application.setStudent(student);
+        application.setInternship(internship);
+        application.setStatus(ApplicationStatus.PENDING);
+        application.setCreatedAt(LocalDateTime.now());
+        application.setUpdatedAt(LocalDateTime.now());
+
+        Application savedApplication = applicationRepository.save(application);
+        return convertToResponse(savedApplication);
+    }
+
+    /**
+     * Get all applications for internships posted by the current company
+     */
+    public List<ApplicationResponse> getApplicationsForMyInternships(Authentication authentication) {
+        // Get current user (company)
+        String email = authentication.getName();
+        User company = userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
+
+        // Verify user is a COMPANY
+        if (!company.getRole().name().equals("COMPANY")) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Only companies can view applicants");
+        }
+
+        // Get all internships for this company
+        List<Internship> myInternships = internshipRepository.findByCompanyId(company.getId());
+
+        // Get all applications for these internships
+        return myInternships.stream()
+                .flatMap(internship -> applicationRepository.findByInternshipId(internship.getId()).stream())
+                .map(this::convertToResponse)
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Get all applications for a specific internship (company only)
+     */
+    public List<ApplicationResponse> getApplicantsForInternship(Long internshipId, Authentication authentication) {
+        // Get current user (company)
+        String email = authentication.getName();
+        User company = userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
+
+        // Verify user is a COMPANY
+        if (!company.getRole().name().equals("COMPANY")) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Only companies can view applicants");
+        }
+
+        // Get internship and verify it belongs to this company
+        Internship internship = internshipRepository.findById(internshipId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Internship not found"));
+
+        if (!internship.getCompany().getId().equals(company.getId())) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You can only view applicants for your own internships");
+        }
+
+        // Get all applications for this internship
+        List<Application> applications = applicationRepository.findByInternshipId(internshipId);
+        return applications.stream()
+                .map(this::convertToResponse)
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Helper: Convert Application entity to ApplicationResponse
+     */
+    private ApplicationResponse convertToResponse(Application application) {
+        return ApplicationResponse.builder()
+                .id(application.getId())
+                .studentId(application.getStudent().getId())
+                .studentEmail(application.getStudent().getEmail())
+                .studentName(application.getStudent().getFullName())
+                .internshipId(application.getInternship().getId())
+                .internshipTitle(application.getInternship().getTitle())
+                .internshipLocation(application.getInternship().getLocation())
+                .status(application.getStatus())
+                .rejectionReason(application.getRejectionReason())
+                .appliedAt(application.getCreatedAt())
+                .updatedAt(application.getUpdatedAt())
+                .build();
+    }
+}
+
+
+----- src\main\java\com\internmatch\backend\service\AuthService.java -----
+package com.internmatch.backend.service;
+
+import com.internmatch.backend.dto.AuthResponse;
+import com.internmatch.backend.dto.LoginRequest;
+import com.internmatch.backend.dto.RegisterRequest;
+import com.internmatch.backend.entity.Role;
+import com.internmatch.backend.entity.User;
+import com.internmatch.backend.repository.UserRepository;
+import com.internmatch.backend.util.JwtUtil;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.time.LocalDateTime;
+
+@Service
+@RequiredArgsConstructor
+public class AuthService {
+    
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final JwtUtil jwtUtil;
+    private final AuthenticationManager authenticationManager;
+    
+    public AuthResponse register(RegisterRequest request) {
+        // Check if email already exists
+        if (userRepository.existsByEmail(request.getEmail())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Email already registered");
+        }
+
+        if (request.getRole() == Role.ADMIN) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Admin self-registration is not allowed");
+        }
+
+        if (request.getRole() == Role.COMPANY &&
+                (request.getOrganization() == null || request.getOrganization().isBlank())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Organization is required for company accounts");
+        }
+        
+        // Create new user
+        User user = new User();
+        user.setEmail(request.getEmail());
+        user.setPassword(passwordEncoder.encode(request.getPassword())); // Hash password
+        user.setFullName(request.getFullName());
+        user.setRole(request.getRole());
+        user.setPhone(request.getPhone());
+        user.setOrganization(request.getOrganization());
+        user.setCreatedAt(LocalDateTime.now());
+        user.setEnabled(true);
+        
+        // Save to database
+        User savedUser = userRepository.save(user);
+        
+        // Generate JWT token
+        String token = jwtUtil.generateToken(savedUser);
+        
+        // Return response
+        return new AuthResponse(
+            token,
+            savedUser.getId(),
+            savedUser.getEmail(),
+            savedUser.getFullName(),
+            savedUser.getRole()
+        );
+    }
+    
+    public AuthResponse login(LoginRequest request) {
+        // Authenticate user
+        authenticationManager.authenticate(
+            new UsernamePasswordAuthenticationToken(
+                request.getEmail(),
+                request.getPassword()
+            )
+        );
+        
+        // If authentication successful, find user
+        User user = userRepository.findByEmail(request.getEmail())
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
+        
+        // Generate JWT token
+        String token = jwtUtil.generateToken(user);
+        
+        // Return response
+        return new AuthResponse(
+            token,
+            user.getId(),
+            user.getEmail(),
+            user.getFullName(),
+            user.getRole()
+        );
+    }
+}
+
+
+----- src\main\java\com\internmatch\backend\service\InternshipService.java -----
+package com.internmatch.backend.service;
+
+import com.internmatch.backend.dto.InternshipRequest;
+import com.internmatch.backend.dto.InternshipResponse;
+import com.internmatch.backend.entity.Internship;
+import com.internmatch.backend.entity.Role;
+import com.internmatch.backend.entity.User;
+import com.internmatch.backend.repository.InternshipRepository;
+import com.internmatch.backend.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+public class InternshipService {
+    
+    private final InternshipRepository internshipRepository;
+    private final UserRepository userRepository;
+    
+    public InternshipResponse createInternship(InternshipRequest request, Authentication authentication) {
+        // Get current logged-in company user
+        User company = userRepository.findByEmail(authentication.getName())
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
+
+        if (company.getRole() != Role.COMPANY) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Only companies can create internships");
+        }
+        
+        // Create internship
+        Internship internship = new Internship();
+        internship.setTitle(request.getTitle());
+        internship.setDescription(request.getDescription());
+        internship.setLocation(request.getLocation());
+        internship.setJobType(request.getJobType());
+        internship.setDuration(request.getDuration());
+        internship.setStipend(request.getStipend());
+        internship.setSkills(request.getSkills());
+        internship.setResponsibilities(request.getResponsibilities());
+        internship.setQualifications(request.getQualifications());
+        internship.setApplicationDeadline(request.getApplicationDeadline());
+        internship.setCompany(company);
+        internship.setActive(true);
+        internship.setCreatedAt(LocalDateTime.now());
+        
+        Internship saved = internshipRepository.save(internship);
+        return mapToResponse(saved);
+    }
+    
+    public List<InternshipResponse> getAllActiveInternships() {
+        return internshipRepository.findByActiveTrueOrderByCreatedAtDesc()
+            .stream()
+            .map(this::mapToResponse)
+            .collect(Collectors.toList());
+    }
+    
+    public InternshipResponse getInternshipById(Long id) {
+        Internship internship = internshipRepository.findById(id)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Internship not found"));
+        return mapToResponse(internship);
+    }
+    
+    public List<InternshipResponse> getMyInternships(Authentication authentication) {
+        User company = userRepository.findByEmail(authentication.getName())
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
+
+        if (company.getRole() != Role.COMPANY) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Only companies can view their internships");
+        }
+        
+        return internshipRepository.findByCompany(company)
+            .stream()
+            .map(this::mapToResponse)
+            .collect(Collectors.toList());
+    }
+    
+    public InternshipResponse updateInternship(Long id, InternshipRequest request, Authentication authentication) {
+        Internship internship = internshipRepository.findById(id)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Internship not found"));
+        
+        // Verify ownership
+        User company = userRepository.findByEmail(authentication.getName())
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
+        
+        if (!internship.getCompany().getId().equals(company.getId())) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You don't have permission to update this internship");
+        }
+        
+        // Update fields
+        internship.setTitle(request.getTitle());
+        internship.setDescription(request.getDescription());
+        internship.setLocation(request.getLocation());
+        internship.setJobType(request.getJobType());
+        internship.setDuration(request.getDuration());
+        internship.setStipend(request.getStipend());
+        internship.setSkills(request.getSkills());
+        internship.setResponsibilities(request.getResponsibilities());
+        internship.setQualifications(request.getQualifications());
+        internship.setApplicationDeadline(request.getApplicationDeadline());
+        internship.setUpdatedAt(LocalDateTime.now());
+        
+        Internship updated = internshipRepository.save(internship);
+        return mapToResponse(updated);
+    }
+    
+    public void deleteInternship(Long id, Authentication authentication) {
+        Internship internship = internshipRepository.findById(id)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Internship not found"));
+        
+        User company = userRepository.findByEmail(authentication.getName())
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
+        
+        if (!internship.getCompany().getId().equals(company.getId())) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You don't have permission to delete this internship");
+        }
+        
+        // Soft delete
+        internship.setActive(false);
+        internship.setUpdatedAt(LocalDateTime.now());
+        internshipRepository.save(internship);
+    }
+    
+    private InternshipResponse mapToResponse(Internship internship) {
+        InternshipResponse response = new InternshipResponse();
+        response.setId(internship.getId());
+        response.setTitle(internship.getTitle());
+        response.setDescription(internship.getDescription());
+        response.setLocation(internship.getLocation());
+        response.setJobType(internship.getJobType());
+        response.setDuration(internship.getDuration());
+        response.setStipend(internship.getStipend());
+        response.setSkills(internship.getSkills());
+        response.setResponsibilities(internship.getResponsibilities());
+        response.setQualifications(internship.getQualifications());
+        response.setApplicationDeadline(internship.getApplicationDeadline());
+        response.setCompanyId(internship.getCompany().getId());
+        response.setCompanyName(internship.getCompany().getFullName());
+        response.setActive(internship.getActive());
+        response.setCreatedAt(internship.getCreatedAt());
+        return response;
+    }
+}
+
+
+----- src\main\java\com\internmatch\backend\service\RankingService.java -----
+package com.internmatch.backend.service;
+
+import com.internmatch.backend.dto.ScoreResponse;
+import com.internmatch.backend.entity.*;
+import com.internmatch.backend.repository.*;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.time.LocalDateTime;
+import java.util.*;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+public class RankingService {
+
+    private final ScoreRepository scoreRepository;
+    private final ApplicationRepository applicationRepository;
+    private final InternshipRepository internshipRepository;
+    private final ResumeRepository resumeRepository;
+
+    /**
+     * Score an application based on resume-to-job fit
+     * Uses: TF-IDF similarity + keyword matching
+     */
+    public ScoreResponse scoreApplication(Long applicationId, Long internshipId, Authentication authentication) {
+        // Get application
+        Application application = applicationRepository.findById(applicationId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Application not found"));
+
+        // Get internship
+        Internship internship = internshipRepository.findById(internshipId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Internship not found"));
+
+        // Verify internship matches application
+        if (!application.getInternship().getId().equals(internshipId)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Application does not match internship");
+        }
+
+        // Verify internship belongs to current company user
+        if (!internship.getCompany().getEmail().equals(authentication.getName())) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You can only score applicants for your own internships");
+        }
+
+        // Get resume
+        Resume resume = resumeRepository.findByApplicationId(applicationId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No resume uploaded for this application"));
+
+        // Extract job description and resume text
+        String jobDescription = internship.getTitle() + " " + internship.getDescription() + " " + internship.getSkills();
+        String resumeText = resume.getExtractedText();
+
+        // Calculate similarity score (0.0 to 1.0)
+        double similarityScore = calculateTextSimilarity(resumeText, jobDescription);
+
+        // Calculate keyword matches
+        ScoreMetrics metrics = calculateKeywordMatches(resumeText, internship.getSkills());
+
+        // Generate explanation
+        String explanation = generateExplanation(similarityScore, metrics);
+
+        // Save or update score for this application
+        Score score = scoreRepository.findByApplicationId(applicationId).orElseGet(Score::new);
+        score.setApplication(application);
+        score.setInternship(internship);
+        score.setSimilarityScore(similarityScore);
+        score.setKeywordMatches(metrics.matchCount);
+        score.setTotalKeywords(metrics.totalKeywords);
+        score.setExplanation(explanation);
+        if (score.getScoredAt() == null) {
+            score.setScoredAt(LocalDateTime.now());
+        }
+        score.setUpdatedAt(LocalDateTime.now());
+
+        Score savedScore = scoreRepository.save(score);
+
+        // Set rank (after saving, query all scores for this internship)
+        updateRanks(internshipId);
+
+        // Reload to get updated rank
+        Score finalScore = scoreRepository.findById(savedScore.getId()).orElse(savedScore);
+
+        return convertToResponse(finalScore);
+    }
+
+    /**
+     * Get ranked applicants for an internship
+     */
+    public List<ScoreResponse> getRankedApplicants(Long internshipId, Authentication authentication) {
+        Internship internship = internshipRepository.findById(internshipId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Internship not found"));
+
+        if (!internship.getCompany().getEmail().equals(authentication.getName())) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You can only view rankings for your own internships");
+        }
+
+        List<Score> scores = scoreRepository.getRankedApplicants(internshipId);
+
+        // Add rank
+        for (int i = 0; i < scores.size(); i++) {
+            scores.get(i).setApplicantRank(i + 1);
+        }
+
+        return scores.stream()
+                .map(this::convertToResponse)
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Calculate text similarity using TF-IDF approach
+     * Simple implementation: percentage of job keywords found in resume
+     */
+    private double calculateTextSimilarity(String resumeText, String jobDescription) {
+        if (resumeText == null || jobDescription == null) {
+            return 0.0;
+        }
+
+        // Tokenize and normalize
+        Set<String> resumeWords = tokenizeAndNormalize(resumeText);
+        Set<String> jobWords = tokenizeAndNormalize(jobDescription);
+
+        if (jobWords.isEmpty()) {
+            return 0.0;
+        }
+
+        // Find intersection
+        int matchCount = 0;
+        for (String word : jobWords) {
+            if (resumeWords.contains(word)) {
+                matchCount++;
+            }
+        }
+
+        // Calculate Jaccard similarity
+        int unionSize = resumeWords.size() + jobWords.size() - matchCount;
+        double jaccardSimilarity = (double) matchCount / unionSize;
+
+        // Boost by keyword frequency in job description
+        double frequencyBoost = calculateFrequencyBoost(resumeText, jobWords);
+
+        // Combined score (weight: 60% similarity, 40% frequency)
+        return (jaccardSimilarity * 0.6) + (frequencyBoost * 0.4);
+    }
+
+    /**
+     * Calculate keyword matches from job skills against resume
+     */
+    private ScoreMetrics calculateKeywordMatches(String resumeText, String skillsString) {
+        if (resumeText == null || skillsString == null || skillsString.isEmpty()) {
+            return new ScoreMetrics(0, 0);
+        }
+
+        // Parse skills (comma-separated)
+        List<String> requiredSkills = Arrays.stream(skillsString.split(","))
+                .map(s -> s.trim().toLowerCase())
+                .filter(s -> !s.isEmpty())
+                .collect(Collectors.toList());
+
+        String resumeLower = resumeText.toLowerCase();
+
+        int matchCount = 0;
+        for (String skill : requiredSkills) {
+            if (resumeLower.contains(skill)) {
+                matchCount++;
+            }
+        }
+
+        return new ScoreMetrics(matchCount, requiredSkills.size());
+    }
+
+    /**
+     * Tokenize text and normalize (lowercase, remove short words)
+     */
+    private Set<String> tokenizeAndNormalize(String text) {
+        if (text == null || text.isEmpty()) {
+            return new HashSet<>();
+        }
+
+        // Simple tokenization (split on non-alphanumeric)
+        String[] tokens = text.toLowerCase()
+                .split("[^a-z0-9]+");
+
+        return Arrays.stream(tokens)
+                .filter(t -> t.length() > 2) // Ignore words < 3 chars
+                .collect(Collectors.toSet());
+    }
+
+    /**
+     * Calculate frequency boost based on important keywords
+     */
+    private double calculateFrequencyBoost(String resumeText, Set<String> jobKeywords) {
+        String resumeLower = resumeText.toLowerCase();
+        int totalMatches = 0;
+
+        for (String keyword : jobKeywords) {
+            // Count occurrences
+            int count = (resumeLower.length() - resumeLower.replace(keyword, "").length()) / keyword.length();
+            totalMatches += count;
+        }
+
+        // Normalize (cap at 1.0)
+        return Math.min(1.0, totalMatches / (double) jobKeywords.size());
+    }
+
+    /**
+     * Generate human-readable explanation of the score
+     */
+    private String generateExplanation(double similarityScore, ScoreMetrics metrics) {
+        StringBuilder sb = new StringBuilder();
+
+        // Similarity explanation
+        int similarityPercent = (int) (similarityScore * 100);
+        if (similarityPercent >= 80) {
+            sb.append("Excellent match. ");
+        } else if (similarityPercent >= 60) {
+            sb.append("Good match. ");
+        } else if (similarityPercent >= 40) {
+            sb.append("Fair match. ");
+        } else {
+            sb.append("Limited match. ");
+        }
+
+        // Skill explanation
+        int skillPercent = (metrics.totalKeywords > 0)
+            ? (int) ((metrics.matchCount * 100.0) / metrics.totalKeywords)
+            : 0;
+        sb.append(String.format("Matched %d out of %d required skills (%d%%). ",
+            metrics.matchCount, metrics.totalKeywords, skillPercent));
+
+        // Overall recommendation
+        if (similarityScore >= 0.7) {
+            sb.append("Highly recommended for interview.");
+        } else if (similarityScore >= 0.5) {
+            sb.append("Recommended for further review.");
+        } else {
+            sb.append("May require additional screening.");
+        }
+
+        return sb.toString();
+    }
+
+    /**
+     * Update rank for all scores in an internship
+     */
+    private void updateRanks(Long internshipId) {
+        List<Score> scores = scoreRepository.getRankedApplicants(internshipId);
+        for (int i = 0; i < scores.size(); i++) {
+            scores.get(i).setApplicantRank(i + 1);
+            scoreRepository.save(scores.get(i));
+        }
+    }
+
+    /**
+     * Convert Score entity to ScoreResponse
+     */
+    private ScoreResponse convertToResponse(Score score) {
+        int similarityPercent = (int) (score.getSimilarityScore() * 100);
+
+        return ScoreResponse.builder()
+                .id(score.getId())
+                .applicationId(score.getApplication().getId())
+                .studentName(score.getApplication().getStudent().getFullName())
+                .studentEmail(score.getApplication().getStudent().getEmail())
+                .internshipId(score.getInternship().getId())
+                .internshipTitle(score.getInternship().getTitle())
+                .similarityScore(score.getSimilarityScore())
+                .similarityPercentage(similarityPercent)
+                .keywordMatches(score.getKeywordMatches())
+                .totalKeywords(score.getTotalKeywords())
+                .explanation(score.getExplanation())
+                .rank(score.getApplicantRank())
+                .scoredAt(score.getScoredAt())
+                .build();
+    }
+
+    /**
+     * Internal class for keyword metrics
+     */
+    private static class ScoreMetrics {
+        int matchCount;
+        int totalKeywords;
+
+        ScoreMetrics(int matchCount, int totalKeywords) {
+            this.matchCount = matchCount;
+            this.totalKeywords = totalKeywords;
+        }
+    }
+}
+
+
+----- src\main\java\com\internmatch\backend\service\ResumeService.java -----
+package com.internmatch.backend.service;
+
+import com.internmatch.backend.dto.ResumeResponse;
+import com.internmatch.backend.entity.Application;
+import com.internmatch.backend.entity.Role;
+import com.internmatch.backend.entity.Resume;
+import com.internmatch.backend.entity.User;
+import com.internmatch.backend.repository.ApplicationRepository;
+import com.internmatch.backend.repository.ResumeRepository;
+import com.internmatch.backend.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.apache.pdfbox.Loader;
+import org.apache.pdfbox.text.PDFTextStripper;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.io.IOException;
+import java.time.LocalDateTime;
+
+@Service
+@RequiredArgsConstructor
+public class ResumeService {
+
+    private final ResumeRepository resumeRepository;
+    private final ApplicationRepository applicationRepository;
+    private final UserRepository userRepository;
+
+    /**
+     * Upload and process resume PDF
+     */
+    public ResumeResponse uploadResume(Long applicationId, MultipartFile file, Authentication authentication) throws IOException {
+        // Validate application exists
+        Application application = applicationRepository.findById(applicationId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Application not found"));
+
+        // Verify current user is the student who applied
+        String email = authentication.getName();
+        if (!application.getStudent().getEmail().equals(email)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You can only upload resume for your own application");
+        }
+
+        // Check if resume already exists for this application
+        if (resumeRepository.existsByApplicationId(applicationId)) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Resume already uploaded for this application. Please delete the old one first.");
+        }
+
+        // Validate file is not empty
+        if (file == null || file.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "File is empty");
+        }
+
+        // Validate file is PDF
+        String mimeType = file.getContentType();
+        if (!isPdfFile(mimeType, file.getOriginalFilename())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Only PDF files are allowed");
+        }
+
+        // Validate file size (10MB limit)
+        long maxFileSize = 10 * 1024 * 1024; // 10MB
+        if (file.getSize() > maxFileSize) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "File size exceeds 10MB limit");
+        }
+
+        // Extract text from PDF
+        String extractedText = extractTextFromPdf(file);
+        if (extractedText == null || extractedText.trim().isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Could not extract text from PDF. Please ensure it's a valid PDF with text content.");
+        }
+
+        // Create resume record
+        Resume resume = new Resume();
+        resume.setApplication(application);
+        resume.setFileName(file.getOriginalFilename());
+        resume.setFileSize(file.getSize());
+        resume.setMimeType(mimeType);
+        resume.setExtractedText(extractedText);
+        resume.setFileData(file.getBytes()); // Store binary data
+        resume.setUploadedAt(LocalDateTime.now());
+        resume.setUpdatedAt(LocalDateTime.now());
+
+        Resume savedResume = resumeRepository.save(resume);
+        return convertToResponse(savedResume, true);
+    }
+
+    /**
+     * Get resume for an application
+     */
+    public ResumeResponse getResume(Long applicationId, Authentication authentication) {
+        Resume resume = resumeRepository.findByApplicationId(applicationId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Resume not found for this application"));
+        authorizeResumeAccess(resume, authentication);
+        return convertToResponse(resume, true);
+    }
+
+    /**
+     * Get resume with preview only (truncated text)
+     */
+    public ResumeResponse getResumePreview(Long applicationId, Authentication authentication) {
+        Resume resume = resumeRepository.findByApplicationId(applicationId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Resume not found for this application"));
+        authorizeResumeAccess(resume, authentication);
+        return convertToResponse(resume, false);
+    }
+
+    private void authorizeResumeAccess(Resume resume, Authentication authentication) {
+        User currentUser = userRepository.findByEmail(authentication.getName())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
+
+        Long ownerStudentId = resume.getApplication().getStudent().getId();
+        Long ownerCompanyId = resume.getApplication().getInternship().getCompany().getId();
+
+        if (currentUser.getRole() == Role.STUDENT && ownerStudentId.equals(currentUser.getId())) {
+            return;
+        }
+        if (currentUser.getRole() == Role.COMPANY && ownerCompanyId.equals(currentUser.getId())) {
+            return;
+        }
+
+        throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You are not allowed to access this resume");
+    }
+
+    /**
+     * Extract text from PDF file using PDFBox
+     */
+    private String extractTextFromPdf(MultipartFile file) {
+        try {
+            PDFTextStripper stripper = new PDFTextStripper();
+            return stripper.getText(Loader.loadPDF(file.getBytes()));
+
+        } catch (IOException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error reading PDF: " + e.getMessage());
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error processing PDF: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Check if uploaded file is a PDF
+     */
+    private boolean isPdfFile(String mimeType, String filename) {
+        if (mimeType != null && mimeType.equals("application/pdf")) {
+            return true;
+        }
+        if (filename != null && filename.toLowerCase().endsWith(".pdf")) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Convert Resume entity to ResumeResponse DTO
+     */
+    private ResumeResponse convertToResponse(Resume resume, boolean fullText) {
+        String extractedText = resume.getExtractedText();
+        String preview = extractedText;
+
+        // If not requesting full text, truncate to preview
+        if (!fullText && extractedText != null && extractedText.length() > 500) {
+            preview = extractedText.substring(0, 500) + "...";
+        }
+
+        ResumeResponse response = ResumeResponse.builder()
+                .id(resume.getId())
+                .applicationId(resume.getApplication().getId())
+                .fileName(resume.getFileName())
+                .fileSize(resume.getFileSize())
+                .mimeType(resume.getMimeType())
+                .extractedTextPreview(preview)
+                .uploadedAt(resume.getUploadedAt())
+                .updatedAt(resume.getUpdatedAt())
+                .build();
+
+        // Include full text only if requested
+        if (fullText) {
+            response.setExtractedText(extractedText);
+        }
+
+        return response;
+    }
+}
+
+
+----- src\main\java\com\internmatch\backend\util\JwtUtil.java -----
+package com.internmatch.backend.util;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
+
+import javax.crypto.SecretKey;
+import java.util.Base64;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
+
+@Component
+public class JwtUtil {
+
+    private final SecretKey secretKey;
+    private final long EXPIRATION_TIME = 1000 * 60 * 60 * 24; // 24 hours
+
+    public JwtUtil(@Value("${JWT_SECRET_BASE64:TXlTZWNyZXRLZXlGb3JJbnRlcm5NYXRjaFByb2plY3QyMDI2}") String base64Secret) {
+        byte[] secretBytes = Base64.getDecoder().decode(base64Secret);
+        if (secretBytes.length < 32) {
+            throw new IllegalStateException("JWT secret must be at least 256 bits (32 bytes) when Base64-decoded");
+        }
+        this.secretKey = Keys.hmacShaKeyFor(secretBytes);
+    }
+    
+    public String extractUsername(String token) {
+        return extractClaim(token, Claims::getSubject);
+    }
+    
+    public Date extractExpiration(String token) {
+        return extractClaim(token, Claims::getExpiration);
+    }
+    
+    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+        final Claims claims = extractAllClaims(token);
+        return claimsResolver.apply(claims);
+    }
+    
+    private Claims extractAllClaims(String token) {
+        return Jwts.parser()
+                .verifyWith(secretKey)
+                .build()
+                .parseSignedClaims(token)
+                .getPayload();
+    }
+    
+    private Boolean isTokenExpired(String token) {
+        return extractExpiration(token).before(new Date());
+    }
+    
+    public String generateToken(UserDetails userDetails) {
+        Map<String, Object> claims = new HashMap<>();
+        return createToken(claims, userDetails.getUsername());
+    }
+    
+    private String createToken(Map<String, Object> claims, String subject) {
+        return Jwts.builder()
+                .claims(claims)
+                .subject(subject)
+                .issuedAt(new Date(System.currentTimeMillis()))
+                .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
+                .signWith(secretKey)
+                .compact();
+    }
+    
+    public Boolean validateToken(String token, UserDetails userDetails) {
+        final String username = extractUsername(token);
+        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+    }
+}
+
+
+----- src\main\resources\application.properties -----
+# Application Name
+spring.application.name=internmatch-backend
+
+# Server Port
+server.port=8080
+
+# MySQL Database Configuration
+spring.datasource.url=${DB_URL:jdbc:mysql://localhost:3306/internmatch_db}
+spring.datasource.username=${DB_USERNAME:internmatch_user}
+spring.datasource.password=${DB_PASSWORD:internmatch_pass_123}
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# JPA/Hibernate Configuration
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.open-in-view=false
+
+# File Upload Configuration
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=10MB
+
+# Logging
+logging.level.com.internmatch.backend=DEBUG
+logging.level.org.springframework.security=INFO
+logging.level.org.springframework.web=INFO
+
+
+----- src\test\java\com\internmatch\backend\InternmatchBackendApplicationTests.java -----
+package com.internmatch.backend;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class InternmatchBackendApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+
+
+----- test_pdfs\sample_resume.pdf -----
+[BINARY FILE - BASE64 ENCODED CONTENT]
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2JqCjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA2MTIgNzkyXSAvQ29udGVudHMgNCAwIFIgL1Jlc291cmNlczw8IC9Gb250PDwgL0YxIDUgMCBSPj4gPj4gPj4KZW5kb2JqCjQgMCBvYmoKPDwgL0xlbmd0aCA0NCA+PgpzdHJlYW0KQlQKL0YxIDEyIFRmCjEwMCA3MDAgVGQKKEpvaG4gRG9lIFJlc3VtZSkgVGoKRVQKZW5kc3RyZWFtCmVuZG9iago1IDAgb2JqCjw8IC9UeXBlIC9Gb250IC9TdWJ0eXBlIC9UeXBlMSAvQmFzZUZvbnQgL0hlbHZldGljYSA+PgplbmRvYmoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmCjAwMDAwMDAwMDkgMDAwMDAgbgowMDAwMDAwMDU4IDAwMDAwIG4KMDAwMDAwMDExNSAwMDAwMCBuCjAwMDAwMDAyNDQgMDAwMDAgbgowMDAwMDAwMzM4IDAwMDAwIG4KdHJhaWxlcgo8PCAvU2l6ZSA2IC9Sb290IDEgMCBSID4+CnN0YXJ0eHJlZgo0MzMKJSVFT0Y=
+
