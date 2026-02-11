@@ -35,17 +35,17 @@ public class InternshipController {
         return ResponseEntity.ok(internships);
     }
     
-    @GetMapping("/{id}")
-    public ResponseEntity<InternshipResponse> getInternshipById(@PathVariable Long id) {
-        InternshipResponse internship = internshipService.getInternshipById(id);
-        return ResponseEntity.ok(internship);
-    }
-    
     @GetMapping("/my-internships")
     @PreAuthorize("hasRole('COMPANY')")
     public ResponseEntity<List<InternshipResponse>> getMyInternships(Authentication authentication) {
         List<InternshipResponse> internships = internshipService.getMyInternships(authentication);
         return ResponseEntity.ok(internships);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<InternshipResponse> getInternshipById(@PathVariable Long id) {
+        InternshipResponse internship = internshipService.getInternshipById(id);
+        return ResponseEntity.ok(internship);
     }
     
     @PutMapping("/{id}")

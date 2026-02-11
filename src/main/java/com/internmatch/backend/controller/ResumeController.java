@@ -35,17 +35,6 @@ public class ResumeController {
     }
 
     /**
-     * Get resume with full extracted text
-     * GET /api/resumes/application/{applicationId}
-     */
-    @GetMapping("/application/{applicationId}")
-    @PreAuthorize("hasAnyRole('STUDENT', 'COMPANY')")
-    public ResponseEntity<ResumeResponse> getResume(@PathVariable Long applicationId, Authentication authentication) {
-        ResumeResponse response = resumeService.getResume(applicationId, authentication);
-        return ResponseEntity.ok(response);
-    }
-
-    /**
      * Get resume preview (truncated text - first 500 characters)
      * GET /api/resumes/application/{applicationId}/preview
      */
@@ -53,6 +42,17 @@ public class ResumeController {
     @PreAuthorize("hasAnyRole('STUDENT', 'COMPANY')")
     public ResponseEntity<ResumeResponse> getResumePreview(@PathVariable Long applicationId, Authentication authentication) {
         ResumeResponse response = resumeService.getResumePreview(applicationId, authentication);
+        return ResponseEntity.ok(response);
+    }
+
+    /**
+     * Get resume with full extracted text
+     * GET /api/resumes/application/{applicationId}
+     */
+    @GetMapping("/application/{applicationId}")
+    @PreAuthorize("hasAnyRole('STUDENT', 'COMPANY')")
+    public ResponseEntity<ResumeResponse> getResume(@PathVariable Long applicationId, Authentication authentication) {
+        ResumeResponse response = resumeService.getResume(applicationId, authentication);
         return ResponseEntity.ok(response);
     }
 }
